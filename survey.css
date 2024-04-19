@@ -1,0 +1,48 @@
+body{
+    background-color: black;
+    color: white;
+}
+a{
+    color: #E1d90d;
+    text-decoration: none;
+}
+.title{
+    margin-top: 0;
+    
+    padding: 10%;
+    font-family: 'HK Grotesk', sans-serif;
+    font-size: 2.3rem;    
+}
+.description{
+    font-family: 'HK Grotesk', sans-serif;
+    font-weight: lighter;
+    font-size:1.5rem;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 25%;
+    width: 400px;
+    justify-content: center;
+}
+#survey{
+    font-family: 'HK Grotesk', sans-serif;
+    font-size: 1.3rem;  
+}
+button{
+    margin: auto;
+    margin-top: 30px;
+    height: 3rem;
+    width: 50%;
+    font-family: 'HK Grotesk', sans-serif;
+    font-weight: bolder;
+    background-color: #E1d90d;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius:10px
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+		rel="stylesheet"
+		href="./survey.css"
+	/>
+    <link href="https://fonts.cdnfonts.com/css/hk-groteks" rel="stylesheet">
+</head>
+</head>
+<body>
+    <div class="container"> 
+        <h1 class="title">
+            <a href="index.html">Y A W Y E</a>
+        </h1>
+        <h2 class="description">Calculate your Total Daily Energy Expenditure (TDEE) with our calculator. 
+            This should help track your calorie goals for effective weight management based on your unique 
+            profile and activity level. Take control of your nutrition journey today!
+        </h2>
+
+        <form id="survey">
+            <div class="gender">
+                Gender:
+            <label for="gender">
+                 <input type="radio" name="gender" id="male" value="male-metric">Male
+            </label>
+            <label for="gender">
+                <input type="radio" name="gender" id="female" value="female-metric">Female
+           </label>
+            </div>
+
+            <div>
+                <label for="age">
+                    Age:    <input type="number" id="age" name="age"/>
+                </label>
+            </div>
+            
+            <div>
+            <label for="weight">
+                Weight:    <input type="number" id="weight" name="weight"/>
+            </label>    
+            </div>
+
+            <div>
+                <label for="height">
+                    Height:    <input type="number" id="height" name="height"/>
+                </label>
+            </div>
+            
+            <div>
+            <label for="activity">
+                Activity Level: 
+                <select id="activity">
+                    <option value="1.2">Sedentary </option>
+                    <option value="1.375">Light Exercise</option>
+                    <option value="1.55">Moderate Exercise</option>
+                    <option value="1.725">Heavy Exercise</option>
+                    <option value="1.9">Athlete </option>
+                </select>
+
+            </label>
+            </div>
+
+            <button>Calculate</button>
+        </form>
+        
+    </div>
+</body>
+</html>
