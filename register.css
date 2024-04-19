@@ -7,11 +7,12 @@ body{
         margin-top: 0;
         padding: 10%;
         font-family: 'HK Grotesk', sans-serif;
-        font-size: 2.3rem;    
+        font-size: 2.3rem;  
+        
 }
 
-a{
-    color: #E1d90d;
+.title a{
+    color: #E1d90d;  
     text-decoration: none;
 }
 
@@ -31,7 +32,6 @@ a{
     gap: 20px;
 }
 img.Home1{
-  
     margin-top: 0;
     width: 450px;
     height: auto;

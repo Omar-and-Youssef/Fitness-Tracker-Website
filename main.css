@@ -1,0 +1,25 @@
+.nav-bar{
+    display:flex;
+    width: 100%;
+    flex-direction: row;
+    background-color: #E1d90d;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 1.5rem;
+    font-family: 'HK Grotesk', sans-serif;
+}
+
+.title a{
+    top: 0; 
+    left: 0;
+    color: #E1d90d;
+    text-decoration: none;
+    font-family: 'HK Grotesk', sans-serif;
+    font-size: 1rem; 
+    background-color: black;   
+}
+.home{
+    margin-left:10px
+}
+
