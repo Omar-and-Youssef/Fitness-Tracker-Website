@@ -6,6 +6,7 @@ body{
 
 .nav-bar{
     display:flex;
+    height:14%;
     width: 100%;
     flex-direction: row;
     justify-content: flex-start;
@@ -38,15 +39,17 @@ h1{
 }
 .rest{
     display:grid;
-    margin-top: 110px;;
+    height:86%;
+    width:100%;
+    margin:0px;
     grid-template-columns: 3fr 2fr;
     grid-template-rows: 1fr;
-    
 }
 .charts{
     display:flex;
-    flex-direction: column;;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:  center;
     background-color: #343131;
 }
 button.log{
@@ -66,13 +69,13 @@ button.log{
     font-size: 18px;
     border-radius:15px
 }
-.charts img{    
-    align-content: center;
-    width:90%;
+
+
+/* .charts img{   
+    width:60%;
     height:auto;
-    margin-top: 20px;
-    margin-bottom: 100px;;
-    margin-left: 5%;
-}
+    margin: 0px;
+
+} */
 
 
