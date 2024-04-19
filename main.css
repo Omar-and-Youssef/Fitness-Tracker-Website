@@ -13,29 +13,26 @@
     align-items: center;
 }
 
-.title a{
-    top: 0; 
-    left: 0;
-    color: #E1d90d;
-    text-decoration: none;
-    font-family: 'HK Grotesk', sans-serif;
-    font-size: 1rem; 
-    background-color: black;   
-}
 .home{
     margin-left:10px
 }
 .nav{
     font-weight: bold;
 }
-h1{
+h1{ 
+    font-family: 'HK Grotesk', sans-serif;
     margin: 0px;
     padding: 0px;
     background-color: black;
-    color:#E1d90d   ;
+    color:#E1d90d ;
+    font-weight: lighter;
 }
 .rest{
+    display:grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 1fr;
     background-color: black;
-    height:100%;
+    width: 500px;
+    height:50px;
 }
 
