@@ -1,81 +1,93 @@
 body{
+    height: 100%;
     background-color: black;
 }
-
-
-
+.layoutManager{
+display: block;
+height: 100%;
+width: 100%;
+position: fixed;
+top:0;
+left:0;
+}
+/*======================================================================================*/
 .nav-bar{
     display:flex;
-    height:14%;
-    width: 100%;
     flex-direction: row;
-    justify-content: flex-start;
-    gap:40px;
-    background-color: #E1d90d;
-    position: fixed;
-    top: 0;
-    left: 0;
-    font-size: 1.3rem;
-    font-family: 'HK Grotesk', sans-serif;
+    width: 100%;
+    justify-content:flex-start ;
     align-items: center;
-}
-
-.home{
-    margin-left:10px
+    background-color: #E1d90d;
+    font-size: 1.3rem;
+    font-family: 'HK Grotesk', sans-serif;  
+    gap:40px;
 }
 .nav{
     font-family: 'HK Grotesk', sans-serif;
     font-weight: bold;
-}
-h1{ 
-    font-family: 'HK Grotesk', sans-serif;
     margin: 0px;
     padding: 0px;
-    background-color: black;
-    color:#E1d90d ;
-    font-weight: lighter;
-    padding: 20px;
-    font-size: 40px;
+
 }
-.rest{
+.title{ 
+    height:100%;
+    background-color: black;
+}
+.title>h1{
+    color:#E1d90d ;
+    margin: 0px;
+    height:50%;
+    padding: 0px;
+    padding-top: 10%;
+    padding-bottom: 5%;
+    padding-right:20px; 
+    padding-left:10px; 
+    font-size: 40px; 
+}
+/*======================================================================================*/
+.userContent{
     display:grid;
-    height:86%;
+    grid-template-columns: 4fr 2fr;
+    grid-template-rows: 1fr;
+    height:100%;
     width:100%;
     margin:0px;
-    grid-template-columns: 3fr 2fr;
-    grid-template-rows: 1fr;
+    padding: 0px;
 }
-.charts{
+.chartSection{
     display:flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items:  center;
-    background-color: #343131;
+    background-color: #343131; 
 }
+.chart>img{  
+    margin: 0px; 
+    width:80%;
+    height:auto;
+} 
+.chart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:10px;
+    margin-bottom: 35%; /*Might cause error in fututre??Will Cause error*/
+}
+
 button.log{
-    margin: auto;
-    margin-top: 20px;
-    margin-right: 25%;
-    height: 4rem;
-    width: 50%;
     font-family: 'HK Grotesk', sans-serif;
-    font-weight: bolder;
-    background-color: #E1d90d;
-    border: none;
+    font-size: 18px;
     color: black;
+    font-weight: bolder;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 18px;
-    border-radius:15px
+    background-color: #E1d90d;
+    border: none;
+    margin-top: 20px;
+    height: 4rem;
+    width: 50%;
+    border-radius:15px;
+
 }
-
-
-/* .charts img{   
-    width:60%;
-    height:auto;
-    margin: 0px;
-
-} */
 
 
