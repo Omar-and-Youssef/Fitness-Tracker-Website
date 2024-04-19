@@ -25,4 +25,17 @@
 .home{
     margin-left:10px
 }
+.nav{
+    font-weight: bold;
+}
+h1{
+    margin: 0px;
+    padding: 0px;
+    background-color: black;
+    color:#E1d90d   ;
+}
+.rest{
+    background-color: black;
+    height:100%;
+}
 
