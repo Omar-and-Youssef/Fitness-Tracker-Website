@@ -3,17 +3,13 @@ body{
     color: white;
 }
 
-.title{
+h1{
+        color: #E1d90d;  
         margin-top: 0;
         padding: 10%;
         font-family: 'HK Grotesk', sans-serif;
         font-size: 2.3rem;  
         
-}
-
-.title a{
-    color: #E1d90d;  
-    text-decoration: none;
 }
 
 .slogan{
@@ -32,8 +28,8 @@ body{
     gap: 20px;
 }
 img.Home1{
-    margin-top: 0;
-    width: 450px;
+    padding: 0px;
+    width: 100%;
     height: auto;
     grid-row-end: span 2;
     top: 0; 
