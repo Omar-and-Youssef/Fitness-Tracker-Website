@@ -2,12 +2,15 @@
     display:flex;
     width: 100%;
     flex-direction: row;
+    justify-content: flex-start;
+    gap:40px;
     background-color: #E1d90d;
     position: fixed;
     top: 0;
     left: 0;
     font-size: 1.5rem;
     font-family: 'HK Grotesk', sans-serif;
+    align-items: center;
 }
 
 .title a{
@@ -19,5 +22,7 @@
     font-size: 1rem; 
     background-color: black;   
 }
-
+.home{
+    margin-left:10px
+}
 
