@@ -1,5 +1,5 @@
-function createFoodLog(){
-    const newDiv = document.createElement("div");
+function updateFoodList(){
+  const newDiv = document.createElement("div");
 
   // and give it some content
   const newContent = document.createTextNode("Hi there and greetings!");
@@ -8,6 +8,10 @@ function createFoodLog(){
   newDiv.appendChild(newContent);
 
   // add the newly created element and its content into the DOM
-  const currentDiv = document.getElementById("foodLog");
+  const currentDiv = document.getElementById("foodList");
   document.body.insertBefore(newDiv, currentDiv);
+}
+
+function displayFoodLog(){
+  
 }
