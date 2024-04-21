@@ -29,16 +29,42 @@
                 <div class="chart">
                     <img src="./images/testChart1.png"> 
                 </div>
-                <button class="log Food">Log Foods</button>
-       	        <button class="log Excercise">Log Excercise</button> 
+                <button class="display foodL">Log Foods</button>
+       	        <button class="display exL">Log Excercise</button> 
             </div>
         </div>     
 
         <div class="foodLog">
+            
             <div class="foodLogContent">
+                <span class="close foodL">&times;</span>
+                <h1>Enter Food Details</h1>
                 <div class="foodLogInput">
-
+                    <label for="foodName">Name: </label>
+                    <input type="text" id="foodName" name="foodName"/>
                 </div>
+
+                <div class="foodLogInput">
+                    <label for="foodCals">Calories: </label>
+                    <input type="text" id="foodCals" name="foodCals"/>
+                </div>
+
+                <div class="foodLogInput">
+                    <label for="foodProt">Protein: </label>
+                    <input type="text" id="foodProt" name="foodProt"/>
+                </div>
+
+                <div class="foodLogInput">
+                    <label for="foodFat">Fats: </label>
+                    <input type="text" id="foodFat" name="foodFat"/>
+                </div>
+
+                <div class="foodLogInput">
+                    <label for="foodCarb">Carbs: </label>
+                    <input type="text" id="foodCarb" name="foodCarb"/>
+                </div>
+
+                <button class="add food">Add</button>
             </div>
         </div>
     </div>

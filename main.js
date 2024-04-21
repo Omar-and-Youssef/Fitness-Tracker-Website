@@ -12,6 +12,12 @@ function updateFoodList(){
   document.body.insertBefore(newDiv, currentDiv);
 }
 
-function displayFoodLog(){
-  
-}
+
+var displaylogButton = document.querySelector(".display.foodL");
+displaylogButton.addEventListener("click", function() {
+  document.querySelector(".foodLog").style.display="block";
+});
+var closeLogButton =document.getElementsByClassName("close")[0];
+closeLogButton.addEventListener("click", function() {
+  document.querySelector(".foodLog").style.display="none";
+});
