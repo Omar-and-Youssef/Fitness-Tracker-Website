@@ -180,6 +180,13 @@ button.display{
     border-radius:15px;
     margin-left: 70%;
 }
+.foodLogContent>button:hover,
+.foodLogContent>button:focus {
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 
 
 

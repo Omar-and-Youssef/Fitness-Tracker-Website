@@ -1,3 +1,10 @@
+function Food(name,calories,protein,fats){
+  this.name = name;
+  this.calories = calories;
+  this.protein = protein;
+  this.fats = fats;
+}
+
 function updateFoodList(){
   const newDiv = document.createElement("div");
 
@@ -21,3 +28,9 @@ var closeLogButton =document.getElementsByClassName("close")[0];
 closeLogButton.addEventListener("click", function() {
   document.querySelector(".foodLog").style.display="none";
 });
+
+var addFoodButton =document.querySelector(".add.food");
+addFoodButton.addEventListener("click", function(){
+  updateFoodList();
+  document.querySelector(".foodLog").style.display="none";
+})
