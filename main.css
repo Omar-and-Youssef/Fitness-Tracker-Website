@@ -194,15 +194,16 @@ button.display{
     display:flex;
     flex-direction: column;
     margin-top: 4%;
+    gap:10px;
+    overflow-x: hidden; /*for hiding horizontal scroll bar*/
+    overflow-y: auto; /*for vertical scroll bar*/   
 }
 .foodBox{
     background-color: #FFF9C7;
     border-radius: 25px;
     width:98%;
     height:100px;
-}
-
-    
+} 
 .foodBox .ListName{
     font-weight: bold;
     font-size:1.5rem;

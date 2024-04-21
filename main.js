@@ -1,3 +1,4 @@
+var numberOfFoodBoxes=0;
 function Food(name,calories,protein,fats,carbs){
   this.name = name;
   this.calories = calories;
@@ -6,51 +7,41 @@ function Food(name,calories,protein,fats,carbs){
   this.carbs=carbs;
 }
 
-function updateFoodList(Food){
-
-  const foodListContentDiv = document.querySelector(".foodListContent");
-
-  const nameDiv = document.createElement("div");
-  nameDiv.classList.add("ListName");
-  nameDiv.textContent= Food.name.value;
-
-  const caloriesDiv = document.createElement("div");
-  caloriesDiv.classList.add("Value","Calories");
-  caloriesDiv.textContent= Food.calories.value;
-
-  const proteinDiv = document.createElement("div");
-  proteinDiv.classList.add("Value","Protein");
-  proteinDiv.textContent= Food.protein.value;
-
-  const fatsDiv = document.createElement("div");
-  fatsDiv.classList.add("Value","Fats");
-  fatsDiv.textContent= Food.fats.value;
-
-  const carbsDiv = document.createElement("div");
-  carbsDiv.classList.add("Value","Carbs");
-  carbsDiv.textContent= Food.carbs.value;
-
-    foodListContentDiv.appendChild(nameDiv);
-    foodListContentDiv.appendChild(caloriesDiv);
-    foodListContentDiv.appendChild(proteinDiv);
-    foodListContentDiv.appendChild(fatsDiv);
-    foodListContentDiv.appendChild(carbsDiv);
-
-    
-  const foodBoxDiv=document.querySelector(".foodBox");
-  foodBoxDiv.appendChild(foodListContentDiv);
-  const foodListContainer =document.querySelector(".foodList");
-  foodListContainer.appendChild(foodBoxDiv);
-
-  // // and give it some content
-  // const newContent = document.createTextNode("Hi there and greetings!");
-
-  // // add the text node to the newly created div
-  // newDiv.appendChild(newContent);
-
-  // // add the newly created element and its content into the DOM
-  // const currentDiv = document.getElementById("foodList");
-  // document.body.insertBefore(newDiv, currentDiv);
+function updateFoodList(food){
+ const foodList= document.querySelector(".foodList");
+ const foodBox=foodBoxCreator(food);
+ foodList.append(foodBox);
+}
+function foodBoxCreator(food){
+  const foodBox=document.createElement("div");
+  foodBox.classList.add("foodBox");
+  foodBox.id=("foodBoxNo."+numberOfFoodBoxes++);
+  const headingOfFoodBox=document.createElement("div");// HEADING DIV
+  headingOfFoodBox.classList.add("headings");
+  var headingNames=["Calories","Protein","Fats","Carbs"];
+  for(var i=0;i<headingNames.length;i++){
+    const theDiv=document.createElement("div");
+    theDiv.classList.add("ListTitle");
+    theDiv.innerHTML=headingNames[i];
+    headingOfFoodBox.append(theDiv);
+  }
+  foodBox.append(headingOfFoodBox);
+  const foodListContent=document.createElement("div");
+  foodListContent.classList.add("foodListContent");//foodListContent Div
+  var inputFoodValues=[food.calories.value,food.protein.value,food.fats.value,food.carbs.value];
+  const foodName=document.createElement("div");
+  foodName.classList.add("ListName");
+  foodName.innerHTML=food.name.value;
+  foodListContent.append(foodName);
+  for(var i=0;i<inputFoodValues.length;i++){
+    var theDiv=document.createElement("div");
+    theDiv.classList.add("Value");
+    theDiv.classList.add(foodListContent[i]);
+    theDiv.innerHTML=inputFoodValues[i];
+    foodListContent.append(theDiv);
+  }
+  foodBox.append(foodListContent);
+  return foodBox;
 }
 
 
