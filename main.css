@@ -109,7 +109,6 @@ button.display{
     display:grid;
     grid-template-columns:repeat(2,auto);
     grid-template-rows: repeat(5,auto);
-    column-gap: 20%;
     margin: 10% 10%;   
     padding: 20px;
     background-color: #FFF9C7;
@@ -161,9 +160,9 @@ button.display{
     float:right;
 }
 .foodLogInput.carbs{
-    grid-column: span 2;
+
 }.foodLogInput.carbs input{
-    float:none;
+    float:right;
 }
 .foodLogInput{
     margin-top: 0;
@@ -181,7 +180,8 @@ button.display{
     height: 4rem;
     width: 50%;
     border-radius:15px;
-    margin-left: 70%;
+    margin-left: 75%;
+    grid-row:5;
 }
 .foodLogContent>button:hover,
 .foodLogContent>button:focus {
@@ -232,6 +232,29 @@ button.display{
     justify-content: space-around;
     font-weight: bold;
     font-family: 'HK Grotesk', sans-serif;
+}
+label{
+    float:left;
+    margin-left:10px;
+}
+/* imrpove the following code*/
+.cals{
+    grid-column-start: 1;
+}
+.prot{
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+.fat{
+    grid-column-start: 2;
+    grid-row-start: 3;
+
+
+}
+.carbs{
+    grid-column-start: 2;
+    grid-row-start: 4;
+
 }
 
 
