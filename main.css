@@ -190,6 +190,39 @@ button.display{
   cursor: pointer;
 }
 
+.foodList{
+    display:flex;
+    flex-direction: column;
+    margin-top: 4%;
+    width:98%;
+    height:100px;
+    background-color: #FFF9C7;
+    border-radius: 25px;
+}
+.testList-1{
+    display: grid;
+    grid-template-columns: repeat(5,auto);
+    grid-template-rows: repeat(2,50px);
+}
+.testList-1>.testName{
+    display: flex;
+    justify-content: center;
+    margin-top: 29%;
+    grid-row: span 2;
+    font-weight: bold;
+    font-size:1.5rem;
+    font-family: 'HK Grotesk', sans-serif;
+}
+.testList-1>.testListTitle{
+    font-size:1rem;
+    margin-top: 10%;
+    font-weight: bold;
+    font-family: 'HK Grotesk', sans-serif;
+}
+.testList-1>.testValue{
+    font-family: 'HK Grotesk', sans-serif;
+}
+
 
 
 
