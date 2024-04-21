@@ -90,7 +90,8 @@ button.display{
 }
 .display:hover,
 .display{
-
+    text-decoration: black;
+    cursor: pointer;
 }
 /*======================================================================================*/
 .foodLog{
@@ -105,18 +106,28 @@ button.display{
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 .foodLogContent{
-    display:flex;
+    display:grid;
+    grid-template-columns:repeat(2,auto);
+    grid-template-rows: repeat(5,auto);
     position: relative;
-    margin: 15% auto;   
+    margin: 10% 10%;   
     padding: 20px;
-    text-align: center;
     background-color: #FFF9C7;
 }
-.foodLogContent>.close{
+.foodLogContent>.headings{
+    grid-column: span 2;
+}
+.foodLogContent h1{
+    position:relative;
+    font-size: 2.5rem;
+    font-family: 'HK Grotesk', sans-serif;
+}
+.foodLogContent .close{
     color:grey;
     float:left;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
+    text-align: left;
 }
 .close:hover,
 .close:focus {
@@ -124,5 +135,53 @@ button.display{
   text-decoration: none;
   cursor: pointer;
 }
+
+.foodLogContent>*{
+    margin-left: 1%;
+}
+
+
+.foodLogInput{
+    padding: 3%;
+    font-size: 1.5rem;
+}
+.foodLogInput>label,input{
+    font-family: 'HK Grotesk', sans-serif;
+}
+.foodLogInput>label{
+    font-weight: bold;
+}
+.foodLogInput>input{
+    padding: 0.25%;
+    font-size: 1rem;
+    border-radius: 5px 0%;
+    border-width: .25px;
+    height:90%;
+    background-color: #FFF9C7;
+}
+.foodLogInput.carbs{
+    grid-column: span 2;
+}
+.foodLogInput{
+    margin-top: 0;
+    text-align: center;
+}
+.foodLogContent>button{
+    font-family: 'HK Grotesk', sans-serif;
+    font-size: 18px;
+    color: black;
+    font-weight: bolder;
+    text-align: center;
+    text-decoration: none;
+    background-color: #E1d90d;
+    border: none;
+    height: 4rem;
+    width: 50%;
+    border-radius:15px;
+    margin-left: 70%;
+}
+
+
+
 
 
