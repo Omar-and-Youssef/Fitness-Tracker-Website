@@ -1,11 +1,12 @@
-function Food(name,calories,protein,fats){
+function Food(name,calories,protein,fats,carbs){
   this.name = name;
   this.calories = calories;
   this.protein = protein;
   this.fats = fats;
+  this.carbs=carbs;
 }
 
-function updateFoodList(){
+function updateFoodList(Food){
   const newDiv = document.createElement("div");
 
   // and give it some content
@@ -30,7 +31,11 @@ closeLogButton.addEventListener("click", function() {
 });
 
 var addFoodButton =document.querySelector(".add.food");
-addFoodButton.addEventListener("click", function(){
-  updateFoodList();
+  addFoodButton.addEventListener("click", function(){
+  var getInput=document.getElementsByClassName("test");
+  for(var i=0;i<getInput.length;i++)
+    getInput[i]=getInput[i].value;
   document.querySelector(".foodLog").style.display="none";
+  var myfood=new Food(getInput[0],getInput[1],getInput[2],getInput[3],getInput[4]);
+  console.log(myfood.name.value+" "+myfood.calories.value+" "+myfood.carbs.value+" "+myfood.protein.value+" "+myfood.fats.value);
 })

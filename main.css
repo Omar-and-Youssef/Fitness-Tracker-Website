@@ -109,7 +109,7 @@ button.display{
     display:grid;
     grid-template-columns:repeat(2,auto);
     grid-template-rows: repeat(5,auto);
-    position: relative;
+    column-gap: 20%;
     margin: 10% 10%;   
     padding: 20px;
     background-color: #FFF9C7;
@@ -158,9 +158,12 @@ button.display{
     border-width: .25px;
     height:90%;
     background-color: #FFF9C7;
+    float:right;
 }
 .foodLogInput.carbs{
     grid-column: span 2;
+}.foodLogInput.carbs input{
+    float:none;
 }
 .foodLogInput{
     margin-top: 0;
