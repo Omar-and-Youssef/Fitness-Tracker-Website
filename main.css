@@ -66,13 +66,22 @@ left:0;
     width:80%;
     height:auto;
 } 
-.chart{
+.chart {
     /*whole div (will have 2 charts)*/
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top:10px;
-    margin-bottom: 10%; /*Might cause error in fututre??Will Cause error*/
+    height:50%;
+    margin-top:10px; /*Might cause error in fututre??Will Cause error*/
+}
+.ring{
+    stroke:gray;
+    stroke-width:15;
+}
+.ringText{
+    font-family: 'HK Grotesk', sans-serif;
+    font-size: 2rem;
+    font-weight: bolder;
 }
 
 button.display{
@@ -93,14 +102,16 @@ button.display{
 .display:hover,
 .display{
     /*adds animation when clicking/hovering*/
-    text-decoration: black;
+    color: #E1d90d;
+    text-decoration: none;
     cursor: pointer;
+    background-color: #000000;
 }
 /*======================================================================================*/
 .foodLog{
     /*the tab were we manually log foods*/
     /*we target the whole screen so we can add fallback effects*/
-    display:none; /* Hidden by default, displays after click to add items*/
+    display:none; /*Hidden by default, displays after click to add items*/
     position: fixed;
     z-index:1;
     top:0;
@@ -205,9 +216,10 @@ label{
 }
 .foodLogButtons.add:hover,
 .foodLogButtons.add:focus {
-  color: #000000;
+  color: #E1d90d;
   text-decoration: none;
   cursor: pointer;
+  background-color: #000000;
 }
 /*======================================================================================*/
 .foodList{
@@ -264,11 +276,12 @@ label{
 .foodDeleteIcon{
     width:14%;
     justify-content: flex-end;
-    color: red;
+    color: #000000;
+    size:3rem;
 }
 .foodDeleteIcon:hover,
 .foodDeleteIcon:focus {
-  color: #000000;
+  color: red;
   text-decoration: none;
   cursor: pointer;
 }

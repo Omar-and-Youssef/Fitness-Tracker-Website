@@ -1,4 +1,9 @@
 var numberOfFoodBoxes=0;
+var totalCalories=0;
+var totalCarbs=0;
+var totalProt=0;
+var totalFats=0;
+
 function Food(name,calories,protein,fats,carbs){
   this.name = name;
   this.calories = calories;
@@ -87,5 +92,15 @@ var getInput=document.getElementsByClassName("foodInput");
   
   updateFoodList(myfood);
 })
+
+//test
+for(var k=0;k<=numberOfFoodBoxes;k++){
+  var calRing= document.querySelector(".caloriesRing .ring");
+
+if(totalCalories>-1){
+  calRing.style.stroke="red";
+}
+
+}
     
 
