@@ -218,6 +218,7 @@ label{
     gap:10px;
     overflow-x: hidden; /*for hiding horizontal scroll bar*/
     overflow-y: auto; /*for vertical scroll bar*/   
+    max-height:480px;
 }
 .foodBox{
     /*Boxes that will hold all logged foods*/
@@ -225,15 +226,16 @@ label{
     background-color: #FFF9C7;
     border-radius: 25px;
     width:98%;
-    height:100px;
+    height:80px;
 }
 .foodBox .headings{
     /*we have headings for foodLogContent too*/
     display: flex;
     font-size:1rem;
     margin-left:20%;
-    margin-top:3% ;
+    height:40px;
     justify-content: space-around;
+    align-items: flex-end;
     font-weight: bold;
     font-family: 'HK Grotesk', sans-serif;
 }
@@ -241,7 +243,9 @@ label{
     /*this displays name and values that were retrieved from food log*/
     display: flex;
     justify-content: space-around;
-    align-items: center; 
+    align-items: flex-start;
+    height:70px;
+    margin-top: 0;
 }
 .foodBox .ListName{
     /*name of added food in list*/
@@ -253,14 +257,12 @@ label{
 }
 .foodBox .Value{
     /*targets all values retrieved from log into list*/
-    margin-top: 2%;
     display: flex; 
     justify-content: space-around; 
     font-size: 1rem; 
     width:20%;
     font-family: 'HK Grotesk', sans-serif;
 }
-
 
 
 
