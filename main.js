@@ -20,10 +20,22 @@ function foodBoxCreator(food){
   //create an id for each div
   const headingOfFoodBox=document.createElement("div");// HEADING DIV
   headingOfFoodBox.classList.add("headings");
-  var headingNames=["Calories","Protein","Fats","Carbs"];
+  const deleteIcon=document.createElement("i");
+  deleteIcon.classList.add("fa","fa-trash-o","foodDeleteIcon");
+  headingOfFoodBox.append(deleteIcon);
+
+  deleteIcon.addEventListener("click", function(event) {
+    const foodBox = event.target.closest(".foodBox");
+     //finds the parent food box of the clicked delete icon
+    if (foodBox) {
+      foodBox.remove();
+    }
+  });
+
+  var headingNames=["Calories","Protein (g)","Fats (g)","Carbs (g)"];
   for(var i=0;i<headingNames.length;i++){
     const theDiv=document.createElement("div");
-    // theDiv.classList.add("ListTitle"); 
+    theDiv.classList.add("headingLabels"); 
     theDiv.innerHTML=headingNames[i];
     headingOfFoodBox.append(theDiv);
   }//add label names to headings box
@@ -63,16 +75,17 @@ closeLogButton.addEventListener("click", function() {
 
 var addFoodButton =document.querySelector(".foodLogButtons.add");
   addFoodButton.addEventListener("click", function(){//add food item button
-  var getInput=document.getElementsByClassName("foodInput");
-
+var getInput=document.getElementsByClassName("foodInput");
   for(var i=0;i<getInput.length;i++)
     getInput[i]=getInput[i].value;
-
+  
   document.querySelector(".foodLog").style.display="none";
 
   var myfood=new Food(getInput[0],getInput[1],getInput[2],getInput[3],getInput[4]);
   console.log(myfood.name.value+" "+myfood.calories.value+" "+myfood.carbs.value+" "
   +myfood.protein.value+" "+myfood.fats.value);//console test
-
+  
   updateFoodList(myfood);
 })
+    
+
