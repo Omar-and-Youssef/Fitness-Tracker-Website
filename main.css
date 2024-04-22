@@ -264,6 +264,13 @@ label{
 .foodDeleteIcon{
     width:14%;
     justify-content: flex-end;
+    color: red;
+}
+.foodDeleteIcon:hover,
+.foodDeleteIcon:focus {
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 
