@@ -11,6 +11,7 @@
 </head>
 <body>
     <div class="layoutManager">
+<!-------------------------------------------------------------------------------------------------------------->
         <div class="nav-bar"> 
             <div class="nav title">
                  <h1>Y A W Y E</h1>
@@ -21,58 +22,60 @@
             <div class="nav articles">Articles</div>
             <div class="nav aboutUs">About Us</div>
         </div>    
+<!-------------------------------------------------------------------------------------------------------------->
         <div class="userContent">
-            <!--Logging Feature will be a modal box, which is a pop up -->
-            <!--once modal box is filled, data should be retrieved inside food list --> 
-            <div class="foodList" id="foodList">
-                
+
+         <!--after food details are entered, they appear as a box on the left side(handled in script)-->      
+        <div class="foodList" id="foodList">
             </div>
             <div class="chartSection">
                 <div class="chart">
                     <img src="./images/testChart1.png"> 
                 </div>
-                <button class="display foodL">Log Foods</button>
-       	        <button class="display exL">Log Excercise</button> 
+                <button class="foodLogButtons display">Log Foods</button>
+       	        <button class="exerLogButtons display">Log Excercise</button> 
             </div>
         </div>     
 
+        <!--Logging Feature will be a modal box-->
+        <!--once modal box is filled, data should be retrieved inside food list (above) --> 
         <div class="foodLog">
-            
             <div class="foodLogContent">
-
                 <div class="headings">
-                    <span class="close foodL">&times;</span>
+                    <span class="foodLogButtons close">&times;</span>
                     <h1>Enter Food Details</h1>
                 </div>
 
                 <div class="foodLogInput">
                     <label for="foodName">Name: </label>
-                    <input class="test" type="text" id="foodName" name="foodName"/>
+                    <input class="foodInput" type="text" id="foodName" name="foodName"/>
                 </div>
 
-                <div class="foodLogInput cals">
-                    <label for="foodCals">Calories: </label>
-                    <input class="test" type="number" id="foodCals" name="foodCals"/>
+                <div class="foodLogInput inputCals">
+                    <label for="inputCals">Calories: </label>
+                    <input class="foodInput" type="number" id="inputCals" name="inputCals"/>
                 </div>
 
-                <div class="foodLogInput prot">
-                    <label for="foodProt">Protein: </label>
-                    <input class="test" type="number" id="foodProt" name="foodProt"/>
+                <div class="foodLogInput inputProt">
+                    <label for="inputProt">Protein: </label>
+                    <input class="foodInput" type="number" id="inputProt" name="inputProt"/>
                 </div>
 
-                <div class="foodLogInput fats">
-                    <label for="foodFats">Fats: </label>
-                    <input  class="test" type="number" id="foodFats" name="foodFats"/>
+                <div class="foodLogInput inputFats">
+                    <label for="inputFats">Fats: </label>
+                    <input  class="foodInput" type="number" id="inputFats" name="inputFats"/>
                 </div>
 
-                <div class="foodLogInput carbs">
-                    <label for="foodCarbs">Carbs: </label>
-                    <input class="test" type="number" id="foodCarbs" name="foodCarbs"/>
+                <div class="foodLogInput inputCarbs">
+                    <label for="inputCarbs">Carbs: </label>
+                    <input class="foodInput" type="number" id="inputCarbs" name="inputCarbs"/>
                 </div>
-                <button class="add food">Add</button>
+                <button class="foodLogButtons add">Add</button>
             </div>
         </div>
     </div>
+<!-------------------------------------------------------------------------------------------------------------->
+
     <script src="./main.js" charset="UTF-8"></script>
 </body>
 </html>

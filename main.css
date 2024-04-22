@@ -12,6 +12,7 @@ left:0;
 }
 /*======================================================================================*/
 .nav-bar{
+    /*navigation-bar container */
     display:flex;
     flex-direction: row;
     width: 100%;
@@ -22,19 +23,17 @@ left:0;
     font-family: 'HK Grotesk', sans-serif;  
     gap:40px;
 }
-.nav{
+.nav{ 
+    /*navigation bar divs*/
     font-family: 'HK Grotesk', sans-serif;
     font-weight: bold;
     margin: 0px;
     padding: 0px;
-
-}
-.title{ 
+}    
+.title>h1{
     height:100%;
     background-color: black;
-}
-.title>h1{
-    color:#E1d90d ;
+    color:#E1d90d;
     margin: 0px;
     height:50%;
     padding: 0px;
@@ -62,11 +61,13 @@ left:0;
     background-color: #343131; 
 }
 .chart>img{  
+    /*test*/
     margin: 0px; 
     width:80%;
     height:auto;
 } 
 .chart{
+    /*whole div (will have 2 charts)*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -75,6 +76,7 @@ left:0;
 }
 
 button.display{
+    /*for both display buttons*/
     font-family: 'HK Grotesk', sans-serif;
     font-size: 18px;
     color: black;
@@ -90,12 +92,15 @@ button.display{
 }
 .display:hover,
 .display{
+    /*adds animation when clicking/hovering*/
     text-decoration: black;
     cursor: pointer;
 }
 /*======================================================================================*/
 .foodLog{
-    display:none; /* Hidden by default */
+    /*the tab were we manually log foods*/
+    /*we target the whole screen so we can add fallback effects*/
+    display:none; /* Hidden by default, displays after click to add items*/
     position: fixed;
     z-index:1;
     top:0;
@@ -106,6 +111,7 @@ button.display{
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 .foodLogContent{
+    /*Content to be displayed (headings, labels and input)*/
     display:grid;
     grid-template-columns:repeat(2,auto);
     grid-template-rows: repeat(5,auto);
@@ -117,40 +123,38 @@ button.display{
     grid-column: span 2;
 }
 .foodLogContent h1{
+    /* "Enter Food Details" */
     position:relative;
     font-size: 2.5rem;
     font-family: 'HK Grotesk', sans-serif;
 }
 .foodLogContent .close{
+    /*targets all close buttons*/
     color:grey;
     float:left;
     font-size: 30px;
     font-weight: bold;
     text-align: left;
 }
-.close:hover,
-.close:focus {
+.foodLogContent .close:hover,
+.foodLogContent .close:focus {
+    /*targets all close buttons*/
   color: #000000;
   text-decoration: none;
   cursor: pointer;
 }
-
-.foodLogContent>*{
-    margin-left: 1%;
-}
-
-
 .foodLogInput{
+    /*targets labels and input boxes*/
     padding: 3%;
     font-size: 1.5rem;
-}
-.foodLogInput>label,input{
     font-family: 'HK Grotesk', sans-serif;
 }
+
 .foodLogInput>label{
     font-weight: bold;
 }
 .foodLogInput>input{
+    /*targets input boxes*/
     padding: 0.25%;
     font-size: 1rem;
     border-radius: 5px 0%;
@@ -159,16 +163,32 @@ button.display{
     background-color: #FFF9C7;
     float:right;
 }
-.foodLogInput.carbs{
-
-}.foodLogInput.carbs input{
+.foodLogInput.carbs input{
     float:right;
 }
-.foodLogInput{
-    margin-top: 0;
-    text-align: center;
+
+label{
+    float:left;
+    margin-left:10px;
 }
-.foodLogContent>button{
+/* imrpove the following code*/
+.inputCals{
+    grid-column-start: 1;
+}
+.inputProt{
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+.inputfat{
+    grid-column-start: 2;
+    grid-row-start: 3;
+}
+.inputCarbs{
+    grid-column-start: 2;
+    grid-row-start: 4;
+}
+.foodLogButtons.add{
+    /*Add Foods Button inside Fod Log*/
     font-family: 'HK Grotesk', sans-serif;
     font-size: 18px;
     color: black;
@@ -183,14 +203,15 @@ button.display{
     margin-left: 75%;
     grid-row:5;
 }
-.foodLogContent>button:hover,
-.foodLogContent>button:focus {
+.foodLogButtons.add:hover,
+.foodLogButtons.add:focus {
   color: #000000;
   text-decoration: none;
   cursor: pointer;
 }
-
+/*======================================================================================*/
 .foodList{
+    /*Black screen that will display any logged food*/
     display:flex;
     flex-direction: column;
     margin-top: 4%;
@@ -199,32 +220,15 @@ button.display{
     overflow-y: auto; /*for vertical scroll bar*/   
 }
 .foodBox{
+    /*Boxes that will hold all logged foods*/
+    /*has 2 parts: headings, foodListContent*/
     background-color: #FFF9C7;
     border-radius: 25px;
     width:98%;
     height:100px;
-} 
-.foodBox .ListName{
-    font-weight: bold;
-    font-size:1.5rem;
-    font-family: 'HK Grotesk', sans-serif;
-    width:20%;
-    margin-left: 5%;
 }
-.foodListContent {
-    display: flex;
-    justify-content: space-around;
-    align-items: center; 
-}
-.foodBox .Value{
-    margin-top: 2%;
-    display: flex; 
-    justify-content: space-around; 
-    font-size: 1rem; 
-    width:20%;
-    font-family: 'HK Grotesk', sans-serif;
-}
-.foodList .headings{
+.foodBox .headings{
+    /*we have headings for foodLogContent too*/
     display: flex;
     font-size:1rem;
     margin-left:20%;
@@ -233,27 +237,30 @@ button.display{
     font-weight: bold;
     font-family: 'HK Grotesk', sans-serif;
 }
-label{
-    float:left;
-    margin-left:10px;
+.foodListContent {
+    /*this displays name and values that were retrieved from food log*/
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
 }
-/* imrpove the following code*/
-.cals{
-    grid-column-start: 1;
+.foodBox .ListName{
+    /*name of added food in list*/
+    font-weight: bold;
+    font-size:1.5rem;
+    font-family: 'HK Grotesk', sans-serif;
+    width:20%;
+    margin-left: 5%;
 }
-.prot{
-    grid-column-start: 2;
-    grid-row-start: 2;
+.foodBox .Value{
+    /*targets all values retrieved from log into list*/
+    margin-top: 2%;
+    display: flex; 
+    justify-content: space-around; 
+    font-size: 1rem; 
+    width:20%;
+    font-family: 'HK Grotesk', sans-serif;
 }
-.fat{
-    grid-column-start: 2;
-    grid-row-start: 3;
-}
-.carbs{
-    grid-column-start: 2;
-    grid-row-start: 4;
 
-}
 
 
 
