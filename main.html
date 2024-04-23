@@ -30,18 +30,14 @@
             </div>
             <div class="chartSection">
 
-                <!-- <div class="chart caloriesRing">
-                    <div class="ring">
-                        <p class="ringText"></p>
-                    </div>
-                </div> -->
                 <svg class="chart caloriesRing"> 
-                    <circle class="ring" cx="150" cy="150" r="100" fill="none"></circle>
-                    <text class="ringText" x="32%" y="50%" dominant-baseline="middle" text-anchor>2000</text>
+                        <!--background circle-->
+                    <circle class="ring-background" cx="150" cy="150" r="100" fill="none" stroke="#f0f0f0" stroke-width="20"></circle>
+                        <!--progress Circle-->
+                    <circle class="ring" cx="150" cy="150" r="100" fill="none" stroke="#ff6347" stroke-width="20" stroke-dasharray="0, 628"></circle>
+                    <text class="ringText" x="110" y="50%" dominant-baseline="middle" text-anchor>2000</text>
                 </svg>
-                <!-- <div class="chart">
-                    <img src="./images/testChart1.png"> 
-                </div> -->
+
                 <button class="foodLogButtons display">Log Foods</button>
        	        <button class="exerLogButtons display">Log Excercise</button> 
             </div>

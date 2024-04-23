@@ -1,8 +1,21 @@
 var numberOfFoodBoxes=0;
-var totalCalories=0;
-var totalCarbs=0;
-var totalProt=0;
-var totalFats=0;
+
+function TotalValues(totalCalories,totalProtein,totalFats,totalCarbs){
+this.totalCalories=totalCalories;
+this.totalCarbs=totalCarbs;
+this.totalProtein=totalProtein;
+this.totalFats=totalFats;
+}
+var myTotalValues=new TotalValues(0,0,0,0);
+
+//test max values(will be calculated using tdee)
+function MaxValues(maxCalories,maxProtein,maxFats,maxCarbs){
+  this.maxCalories=maxCalories;
+  this.maxCarbs=maxCarbs;
+  this.maxProtein=maxProtein;
+  this.maxFats=maxFats;
+}
+var myMaxValues=new MaxValues(1700,140,80,200);
 
 function Food(name,calories,protein,fats,carbs){
   this.name = name;
@@ -67,8 +80,14 @@ function foodBoxCreator(food){
   foodBox.append(foodListContent);//add content to box
   return foodBox;
 }
+function updateTotalVaraiables(food, total){
+  total.totalCalories += parseInt(food.calories.value);
+  total.totalProtein += parseInt(food.protein.value);
+  total.totalFats += parseInt(food.fats.value);
+  total.totalCarbs += parseInt(food.carbs.value);
+}
 
-
+//Display/Close Food Log Menu
 var displaylogButton = document.querySelector(".foodLogButtons.display");
 displaylogButton.addEventListener("click", function() {
   document.querySelector(".foodLog").style.display="block";
@@ -78,6 +97,8 @@ closeLogButton.addEventListener("click", function() {
   document.querySelector(".foodLog").style.display="none";
 });
 
+
+//AddFoods
 var addFoodButton =document.querySelector(".foodLogButtons.add");
   addFoodButton.addEventListener("click", function(){//add food item button
 var getInput=document.getElementsByClassName("foodInput");
@@ -87,20 +108,23 @@ var getInput=document.getElementsByClassName("foodInput");
   document.querySelector(".foodLog").style.display="none";
 
   var myfood=new Food(getInput[0],getInput[1],getInput[2],getInput[3],getInput[4]);
+
+  updateTotalVaraiables(myfood,myTotalValues);
+
   console.log(myfood.name.value+" "+myfood.calories.value+" "+myfood.carbs.value+" "
-  +myfood.protein.value+" "+myfood.fats.value);//console test
+  +myfood.protein.value+" "+myfood.fats.value+" "+myTotalValues.totalCalories+" ");//console test
   
   updateFoodList(myfood);
 })
 
-//test
-for(var k=0;k<=numberOfFoodBoxes;k++){
-  var calRing= document.querySelector(".caloriesRing .ring");
+// //test
+// for(var k=0;k<=numberOfFoodBoxes;k++){
+//   var calRing= document.querySelector(".caloriesRing .ring");
 
-if(totalCalories>-1){
-  calRing.style.stroke="red";
-}
+// if(totalCalories>-1){
+//   calRing.style.stroke="red";
+// }
 
-}
+// }
     
 
