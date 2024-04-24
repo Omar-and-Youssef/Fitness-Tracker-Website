@@ -115,16 +115,30 @@ var getInput=document.getElementsByClassName("foodInput");
   +myfood.protein.value+" "+myfood.fats.value+" "+myTotalValues.totalCalories+" ");//console test
   
   updateFoodList(myfood);
+  updateCaloriesRing(myTotalValues);
 })
 
-// //test
-// for(var k=0;k<=numberOfFoodBoxes;k++){
-//   var calRing= document.querySelector(".caloriesRing .ring");
 
-// if(totalCalories>-1){
-//   calRing.style.stroke="red";
-// }
+function  updateCaloriesRing(total){
+  var ringtotalCalories=document.querySelector(".ringCalValue");
 
-// }
+  ringtotalCalories.innerHTML=0;
+  ringtotalCalories.innerHTML=total.totalCalories;
+
+  var ratio=total.totalCalories/myMaxValues.maxCalories; 
+  var ring=document.querySelector(".ring");
+  var dashOffset=0;
+  if(ratio<1)dashOffset=628-(ratio*628);
+  ring.style.strokeDashoffset = dashOffset;
+
+  if(ratio>1.0)
+    ring.style.stroke="red";
+  else if(ratio>=0.9) ring.style.stroke="green";
+  else if(ratio>=0.7) ring.style.stroke="#0096FF";
+  else if(ratio>=0.3) ring.style.stroke="yellow";
+    else ring.style.stroke="orange";
+    
+}
+
     
 

@@ -78,11 +78,23 @@ left:0;
     stroke:gray;
     stroke-width:15;
     stroke-dasharray: 628;
+    stroke-dashoffset: 628;
+    transition: stroke-dashoffset 0.5s ease-in-out; /*animation*/
 }
-.ringText{
+.ringCalValue{
+    fill: yellow;
     font-family: 'HK Grotesk', sans-serif;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bolder;
+}
+.ringCalUnit,.ringCalMax{
+    font-family: 'HK Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    fill:#b78e04;
+}
+.ringCalMax{
+    font-size: 1rem;
 }
 
 button.display{
