@@ -60,19 +60,21 @@ left:0;
     align-items:  center;
     background-color: #343131; 
 }
-.chart>img{  
-    /*test*/
-    margin: 0px; 
-    width:80%;
-    height:auto;
-} 
-.chart {
+
+.caloriesRing{
     /*whole div (will have 2 charts)*/
     display: flex;
     align-items: center;
     justify-content: center;
     height:50%;
     margin-top:10px; /*Might cause error in fututre??Will Cause error*/
+}
+.macrosRing{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:50%;
+    margin-top:10px;
 }
 .ring{
     stroke:gray;

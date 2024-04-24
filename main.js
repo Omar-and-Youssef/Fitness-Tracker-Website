@@ -10,7 +10,7 @@ var myTotalValues=new TotalValues(0,0,0,0);
 // =============================================================================
 
 var ringtotalCalories=document.querySelector(".ringCalValue");
-ringtotalCalories.innerHTML=0;
+ringtotalCalories.innerHTML=0; //start
 //test max values(will be calculated using tdee)
 function MaxValues(maxCalories,maxProtein,maxFats,maxCarbs){
   this.maxCalories=maxCalories;
@@ -30,15 +30,6 @@ function Food(name,calories,protein,fats,carbs){
   this.carbs=carbs;
 }
 var myFood=new Food(0,0,0,0,0);
-
-// =============================================================================
-
-function updateFoodList(food){
- const foodList= document.querySelector(".foodList");
- const foodBox=foodBoxCreator(food);
- foodList.append(foodBox);
-   //add created food Box div to our list
-}
 
 // =============================================================================
 
@@ -108,6 +99,15 @@ function foodBoxCreator(food){
   foodBox.append(foodListContent);//add content to box
   return foodBox;
 }
+
+ // =============================================================================
+
+function updateFoodList(food){
+  const foodList= document.querySelector(".foodList");
+  const foodBox=foodBoxCreator(food);
+  foodList.append(foodBox);
+    //add created food Box div to our list
+ } 
 // =============================================================================
 
 function updateTotalVariables(){
@@ -127,8 +127,28 @@ function updateTotalVariables(){
   updateCaloriesRing(myTotalValues);
 }
 // =============================================================================
+function  updateCaloriesRing(total){
+  ringtotalCalories.innerHTML=total.totalCalories;
 
-//Display/Close Food Log Menu
+  var ratio=total.totalCalories/myMaxValues.maxCalories; 
+  var ring=document.querySelector(".ring");
+
+  var dashOffset=0;
+  if(ratio<1)dashOffset=628-(ratio*628);
+  ring.style.strokeDashoffset = dashOffset;
+
+  if(ratio>1.0)
+    ring.style.stroke="red";
+  else if(ratio>=0.9) 
+    ring.style.stroke="green";
+  else if(ratio>=0.7) 
+    ring.style.stroke="#0096FF";
+  else if(ratio>=0.3) 
+    ring.style.stroke="#E1d90d";
+  else  ring.style.stroke="orange";
+}
+
+//Display/Close FoodLog Menu Buttons
 var displaylogButton = document.querySelector(".foodLogButtons.display");
 displaylogButton.addEventListener("click", function() {
   document.querySelector(".foodLog").style.display="block";
@@ -138,8 +158,7 @@ closeLogButton.addEventListener("click", function() {
   document.querySelector(".foodLog").style.display="none";
 });
 
-
-//AddFoods
+//Add Food Button
 var addFoodButton =document.querySelector(".foodLogButtons.add");
   addFoodButton.addEventListener("click", function(){//add food item button
 var getInput=document.getElementsByClassName("foodInput");
@@ -181,25 +200,5 @@ if (isValidInput) {
 
 // =============================================================================
 
-function  updateCaloriesRing(total){
-  ringtotalCalories.innerHTML=total.totalCalories;
-
-  var ratio=total.totalCalories/myMaxValues.maxCalories; 
-  var ring=document.querySelector(".ring");
-
-  var dashOffset=0;
-  if(ratio<1)dashOffset=628-(ratio*628);
-  ring.style.strokeDashoffset = dashOffset;
-
-  if(ratio>1.0)
-    ring.style.stroke="red";
-  else if(ratio>=0.9) 
-    ring.style.stroke="green";
-  else if(ratio>=0.7) 
-    ring.style.stroke="#0096FF";
-  else if(ratio>=0.3) 
-    ring.style.stroke="#E1d90d";
-  else  ring.style.stroke="orange";
-}
 
 
