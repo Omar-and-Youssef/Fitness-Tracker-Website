@@ -117,10 +117,9 @@ var getInput=document.getElementsByClassName("foodInput");
   //Get Input
   for(var i=0;i<getInput.length;i++)
     getInput[i]=getInput[i].value;
-
     var isValidInput = true;
     for (var i = 0;i<getInput.length;i++) {
-        if (getInput[i].value === "" || isNaN(parseFloat(getInput[i].value))){
+        if (getInput[i].value === "" ||(i!=0&&isNaN(parseFloat(getInput[i].value)))){
             alert("Please enter a valid value for all input fields");
             isValidInput = false;
             break;
