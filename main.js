@@ -8,6 +8,8 @@ this.totalFats=totalFats;
 }
 var myTotalValues=new TotalValues(0,0,0,0);
 
+var ringtotalCalories=document.querySelector(".ringCalValue");
+ringtotalCalories.innerHTML=0;
 //test max values(will be calculated using tdee)
 function MaxValues(maxCalories,maxProtein,maxFats,maxCarbs){
   this.maxCalories=maxCalories;
@@ -47,6 +49,7 @@ function foodBoxCreator(food){
      //finds the parent food box of the clicked delete icon
     if (foodBox) {
       foodBox.remove();
+      updateTotalVariables(0,food,myTotalValues);
     }
   });
 
@@ -80,12 +83,21 @@ function foodBoxCreator(food){
   foodBox.append(foodListContent);//add content to box
   return foodBox;
 }
-function updateTotalVaraiables(food, total){
+function updateTotalVariables(addDelete,food, total){
+  if(addDelete!=0){
   total.totalCalories += parseInt(food.calories.value);
   total.totalProtein += parseInt(food.protein.value);
   total.totalFats += parseInt(food.fats.value);
   total.totalCarbs += parseInt(food.carbs.value);
-}
+  }
+  else{
+    total.totalCalories -= parseInt(food.calories.value);
+  total.totalProtein -= parseInt(food.protein.value);
+  total.totalFats -= parseInt(food.fats.value);
+  total.totalCarbs -= parseInt(food.carbs.value);
+  }
+  updateCaloriesRing(myTotalValues);
+  }
 
 //Display/Close Food Log Menu
 var displaylogButton = document.querySelector(".foodLogButtons.display");
@@ -109,20 +121,17 @@ var getInput=document.getElementsByClassName("foodInput");
 
   var myfood=new Food(getInput[0],getInput[1],getInput[2],getInput[3],getInput[4]);
 
-  updateTotalVaraiables(myfood,myTotalValues);
+  updateTotalVariables(1,myfood,myTotalValues);
 
   console.log(myfood.name.value+" "+myfood.calories.value+" "+myfood.carbs.value+" "
   +myfood.protein.value+" "+myfood.fats.value+" "+myTotalValues.totalCalories+" ");//console test
   
   updateFoodList(myfood);
-  updateCaloriesRing(myTotalValues);
 })
 
 
 function  updateCaloriesRing(total){
-  var ringtotalCalories=document.querySelector(".ringCalValue");
 
-  ringtotalCalories.innerHTML=0;
   ringtotalCalories.innerHTML=total.totalCalories;
 
   var ratio=total.totalCalories/myMaxValues.maxCalories; 
