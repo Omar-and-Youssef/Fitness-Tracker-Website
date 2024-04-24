@@ -16,21 +16,32 @@ left:0;
     display:flex;
     flex-direction: row;
     width: 100%;
+    height: 15%;
     justify-content:flex-start ;
     align-items: center;
     background-color: #E1d90d;
     font-size: 1.3rem;
     font-family: 'HK Grotesk', sans-serif;  
-    gap:40px;
 }
 .nav{ 
     /*navigation bar divs*/
     font-family: 'HK Grotesk', sans-serif;
+    margin: 0;
+    padding: 3%;
+}
+.nav.home{
     font-weight: bold;
-    margin: 0px;
-    padding: 0px;
-}    
-.title>h1{
+    background-color: yellow !important;
+}
+.nav:hover,
+.nav:focus{
+    /*adds animation when clicking/hovering*/
+    background-color:yellow;
+    cursor: pointer;
+}
+.title{
+    font-family: 'HK Grotesk', sans-serif;
+    font-weight: bold;
     height:100%;
     background-color: black;
     color:#E1d90d;

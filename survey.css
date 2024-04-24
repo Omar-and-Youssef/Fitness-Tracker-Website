@@ -1,35 +1,50 @@
+*{
+	box-sizing:border-box;
+}
+html {
+  height: 100%;
+  width: 100%;
+}
 body{
     background-color: black;
     color: white;
+	height:100%;
+	width: 100%;
+	display:flex;
+	justify-content:center;
+	align-content:center;
 }
 a{
     color: #E1d90d;
     text-decoration: none;
 }
-.title{
-    margin-top: 0;
-    
-    padding: 10%;
+h1{
+	margin-top: 0;
+    padding: 10% 10% 0 10%;
     font-family: 'HK Grotesk', sans-serif;
-    font-size: 2.3rem;    
+    font-size: 2.3rem;  
 }
 .description{
     font-family: 'HK Grotesk', sans-serif;
     font-weight: lighter;
-    font-size:1.5rem;
+    width: fit-content
 }
-.container{
-    display: flex;
-    flex-direction: column;
-    margin-left: 25%;
-    width: 400px;
-    justify-content: center;
-}
-#survey{
+form{
     font-family: 'HK Grotesk', sans-serif;
-    font-size: 1.3rem;  
+    font-size: 1.3rem; 
 }
-button{
+p,#gender{
+	width: 150px;
+	font-size: 1.3rem
+}
+label{
+  width: 150px;
+  display: inline-block
+}
+#div1,#div2,#div3{
+	width:fit-content;
+}
+#sub{
     margin: auto;
     margin-top: 30px;
     height: 3rem;
@@ -45,4 +60,13 @@ button{
     display: inline-block;
     font-size: 16px;
     border-radius:10px
+}
+#container{
+	width:60%;
+	height: 100%;
+    background-color:#242420;
+	border-radius:25px;
+}
+div{
+	/* background-color:#242420; */
 }
