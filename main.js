@@ -120,7 +120,15 @@ var getInput=document.getElementsByClassName("foodInput");
     var isValidInput = true;
     for (var i = 0;i<getInput.length;i++) {
         if (getInput[i].value === "" ||(i!=0&&isNaN(parseFloat(getInput[i].value)))){
-            alert("Please enter a valid value for all input fields");
+          var fieldName="";
+          switch(i){
+            case 0:fieldName="Name";break;
+            case 1:fieldName="Calories";break;
+            case 2:fieldName="Protein";break;
+            case 3:fieldName="Fat";break;
+            case 4:fieldName="Carbs";break;
+          }
+            alert("Please enter a valid value for the "+fieldName+" field");
             isValidInput = false;
             break;
         }
