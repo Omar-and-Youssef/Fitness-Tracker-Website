@@ -1,5 +1,4 @@
 var numberOfFoodBoxes=0;
-
 function TotalValues(totalCalories,totalProtein,totalFats,totalCarbs){
 this.totalCalories=totalCalories;
 this.totalCarbs=totalCarbs;
@@ -7,6 +6,8 @@ this.totalProtein=totalProtein;
 this.totalFats=totalFats;
 }
 var myTotalValues=new TotalValues(0,0,0,0);
+
+// =============================================================================
 
 var ringtotalCalories=document.querySelector(".ringCalValue");
 ringtotalCalories.innerHTML=0;
@@ -19,6 +20,8 @@ function MaxValues(maxCalories,maxProtein,maxFats,maxCarbs){
 }
 var myMaxValues=new MaxValues(1700,140,80,200);
 
+// =============================================================================
+
 function Food(name,calories,protein,fats,carbs){
   this.name = name;
   this.calories = calories;
@@ -26,6 +29,9 @@ function Food(name,calories,protein,fats,carbs){
   this.fats = fats;
   this.carbs=carbs;
 }
+var myFood=new Food(0,0,0,0,0);
+
+// =============================================================================
 
 function updateFoodList(food){
  const foodList= document.querySelector(".foodList");
@@ -33,6 +39,9 @@ function updateFoodList(food){
  foodList.append(foodBox);
    //add created food Box div to our list
 }
+
+// =============================================================================
+
 function foodBoxCreator(food){
   const foodBox=document.createElement("div");
   foodBox.classList.add("foodBox");
@@ -49,7 +58,7 @@ function foodBoxCreator(food){
      //finds the parent food box of the clicked delete icon
     if (foodBox) {
       foodBox.remove();
-      updateTotalVariables(0,food,myTotalValues);
+      updateTotalVariables();
     }
   });
 
@@ -72,32 +81,52 @@ function foodBoxCreator(food){
 
   foodListContent.append(foodName);//add names to content
 
-  for(var i=0;i<inputFoodValues.length;i++){
-    var theDiv=document.createElement("div");
-    theDiv.classList.add("Value");
-    theDiv.classList.add(foodListContent[i]);
-    theDiv.innerHTML=inputFoodValues[i];
-    foodListContent.append(theDiv); //add values to content
-  }
+  var calDiv=document.createElement("div");
+  calDiv.classList.add("Value","caloricValue");//to access each element alone
+  calDiv.classList.add(foodListContent[0]);
+  calDiv.innerHTML=inputFoodValues[0];
+  foodListContent.append(calDiv); //add values to content
+
+  var protDiv=document.createElement("div");
+  protDiv.classList.add("Value","proteinValue");
+  protDiv.classList.add(foodListContent[1]);
+  protDiv.innerHTML=inputFoodValues[1]; 
+  foodListContent.append(protDiv);
+
+  var fatsDiv=document.createElement("div");
+  fatsDiv.classList.add("Value","fatsValue");
+  fatsDiv.classList.add(foodListContent[2]);
+  fatsDiv.innerHTML=inputFoodValues[2];
+  foodListContent.append(fatsDiv);
+
+  var carbsDiv=document.createElement("div");
+  carbsDiv.classList.add("Value","carbsValue");
+  carbsDiv.classList.add(foodListContent[3]);
+  carbsDiv.innerHTML=inputFoodValues[3];
+  foodListContent.append(carbsDiv);
 
   foodBox.append(foodListContent);//add content to box
   return foodBox;
 }
-function updateTotalVariables(addDelete,food, total){
-  if(addDelete!=0){
-  total.totalCalories += parseInt(food.calories.value);
-  total.totalProtein += parseInt(food.protein.value);
-  total.totalFats += parseInt(food.fats.value);
-  total.totalCarbs += parseInt(food.carbs.value);
-  }
-  else{
-    total.totalCalories -= parseInt(food.calories.value);
-  total.totalProtein -= parseInt(food.protein.value);
-  total.totalFats -= parseInt(food.fats.value);
-  total.totalCarbs -= parseInt(food.carbs.value);
-  }
+// =============================================================================
+
+function updateTotalVariables(){
+  var calories=document.getElementsByClassName("caloricValue");
+  var protein=document.getElementsByClassName("proteinValue");
+  var fats=document.getElementsByClassName("fatsValue");
+  var carbs=document.getElementsByClassName("carbsValue");
+  myTotalValues= new TotalValues(0,0,0,0);
+  console.log(calories);
+  for(var i=0;i<calories.length;i++){
+    myTotalValues.totalCalories += parseInt(calories[i].innerHTML);
+    myTotalValues.totalProtein += parseInt(protein[i].innerHTML);
+    myTotalValues.totalFats += parseInt(fats[i].innerHTML);
+    myTotalValues.totalCarbs += parseInt(carbs[i].innerHTML);
+}
+
   updateCaloriesRing(myTotalValues);
-  }
+}
+// =============================================================================
 
 //Display/Close Food Log Menu
 var displaylogButton = document.querySelector(".foodLogButtons.display");
@@ -139,23 +168,24 @@ if (isValidInput) {
 
   var myfood=new Food(getInput[0],getInput[1],getInput[2],getInput[3],getInput[4]);
 
-  updateTotalVariables(1,myfood,myTotalValues);
+  
 
   console.log(myfood.name.value+" "+myfood.calories.value+" "+myfood.carbs.value+" "
   +myfood.protein.value+" "+myfood.fats.value+" "+myTotalValues.totalCalories+" ");//console test
   
   updateFoodList(myfood);
+  updateTotalVariables();
 }
 
 })
 
+// =============================================================================
 
 function  updateCaloriesRing(total){
   ringtotalCalories.innerHTML=total.totalCalories;
 
   var ratio=total.totalCalories/myMaxValues.maxCalories; 
   var ring=document.querySelector(".ring");
-  var ringText=document.querySelector(".ringCalValue.ringCalUnit.ringCalMax");
 
   var dashOffset=0;
   if(ratio<1)dashOffset=628-(ratio*628);
