@@ -114,9 +114,20 @@ closeLogButton.addEventListener("click", function() {
 var addFoodButton =document.querySelector(".foodLogButtons.add");
   addFoodButton.addEventListener("click", function(){//add food item button
 var getInput=document.getElementsByClassName("foodInput");
+  //Get Input
   for(var i=0;i<getInput.length;i++)
     getInput[i]=getInput[i].value;
-  
+
+    var isValidInput = true;
+    for (var i = 0;i<getInput.length;i++) {
+        if (getInput[i].value === "" || isNaN(parseFloat(getInput[i].value))){
+            alert("Please enter a valid value for all input fields");
+            isValidInput = false;
+            break;
+        }
+    }
+
+if (isValidInput) {
   document.querySelector(".foodLog").style.display="none";
 
   var myfood=new Food(getInput[0],getInput[1],getInput[2],getInput[3],getInput[4]);
@@ -127,27 +138,31 @@ var getInput=document.getElementsByClassName("foodInput");
   +myfood.protein.value+" "+myfood.fats.value+" "+myTotalValues.totalCalories+" ");//console test
   
   updateFoodList(myfood);
+}
+
 })
 
 
 function  updateCaloriesRing(total){
-
   ringtotalCalories.innerHTML=total.totalCalories;
 
   var ratio=total.totalCalories/myMaxValues.maxCalories; 
   var ring=document.querySelector(".ring");
+  var ringText=document.querySelector(".ringCalValue.ringCalUnit.ringCalMax");
+
   var dashOffset=0;
   if(ratio<1)dashOffset=628-(ratio*628);
   ring.style.strokeDashoffset = dashOffset;
 
   if(ratio>1.0)
     ring.style.stroke="red";
-  else if(ratio>=0.9) ring.style.stroke="green";
-  else if(ratio>=0.7) ring.style.stroke="#0096FF";
-  else if(ratio>=0.3) ring.style.stroke="yellow";
-    else ring.style.stroke="orange";
-    
+  else if(ratio>=0.9) 
+    ring.style.stroke="green";
+  else if(ratio>=0.7) 
+    ring.style.stroke="#0096FF";
+  else if(ratio>=0.3) 
+    ring.style.stroke="#E1d90d";
+  else  ring.style.stroke="orange";
 }
 
-    
 

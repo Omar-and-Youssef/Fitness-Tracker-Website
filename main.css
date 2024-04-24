@@ -82,16 +82,16 @@ left:0;
     transition: stroke-dashoffset 0.5s ease-in-out; /*animation*/
 }
 .ringCalValue{
-    fill: yellow;
     font-family: 'HK Grotesk', sans-serif;
     font-size: 2.5rem;
     font-weight: bolder;
+    fill:#FFF9C7;
 }
 .ringCalUnit,.ringCalMax{
     font-family: 'HK Grotesk', sans-serif;
     font-size: 1.5rem;
     font-weight: bolder;
-    fill:#b78e04;
+    fill:#FFF9C7;
 }
 .ringCalMax{
     font-size: 1rem;
@@ -243,7 +243,7 @@ label{
     gap:10px;
     overflow-x: hidden; /*for hiding horizontal scroll bar*/
     overflow-y: auto; /*for vertical scroll bar*/   
-    max-height:480px;
+    max-height:80%;
 }
 .foodBox{
     /*Boxes that will hold all logged foods*/
