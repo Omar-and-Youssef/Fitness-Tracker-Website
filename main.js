@@ -174,7 +174,7 @@ function drawMacrosChart(protein,fats,carbs) {
       width: 300,
       height: 300,
       pieSliceText: 'none',
-      pieSliceText:'label',
+      pieSliceText:'none',
       titlePosition: 'out',
       titleTextStyle: {
         color: "white", 
