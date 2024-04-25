@@ -21,7 +21,6 @@ function MaxValues(maxCalories,maxProtein,maxFats,maxCarbs){
 var myMaxValues=new MaxValues(1700,140,80,200);
 
 // =============================================================================
-
 function Food(name,calories,protein,fats,carbs){
   this.name = name;
   this.calories = calories;
@@ -125,6 +124,10 @@ function updateTotalVariables(){
 }
 
   updateCaloriesRing(myTotalValues);
+
+  if(myTotalValues.totalProtein==0 || myTotalValues.totalFats==0 || myTotalValues.totalCarbs==0)
+  drawMacrosChart(myMaxValues.maxProtein,myMaxValues.maxFats,myMaxValues.maxCarbs);
+  else drawMacrosChart(myTotalValues.totalProtein,myTotalValues.totalFats,myTotalValues.totalCarbs);
 }
 // =============================================================================
 function  updateCaloriesRing(total){
@@ -199,6 +202,49 @@ if (isValidInput) {
 })
 
 // =============================================================================
+google.charts.load("current",{packages: ["corechart"]});
+google.charts.setOnLoadCallback(function(){
+  drawMacrosChart(myMaxValues.maxProtein,myMaxValues.maxFats,myMaxValues.maxCarbs);
+});   
+
+function drawMacrosChart(protein,fats,carbs) {
+
+  var data = google.visualization.arrayToDataTable([
+      ['Macronutrient', 'Percentage'],
+      ['Fats', fats],
+      ['Protein', protein],
+      ['Carbs', carbs]
+  ]);
+
+  var options = {
+    colors: ["orange", "#6495ED", "#E3735E"],
+      width: 400,
+      height: 300,
+      pieSliceText: 'label',
+      titlePosition: 'out',
+      titleTextStyle: {
+        color: "white", 
+        fontSize: 20
+      },
+      pieSliceTextStyle:{
+        color:"white",
+        fontWeight: "bold",
+        fontSize: 14, 
+      },
+      pieHole: 0.4,
+      backgroundColor: "#343131",
+      chartArea: {
+        left: '15%',
+        top: '15%',
+        width:'70%',
+        height:'80%',
+    },
+    legend:"none",
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById("macrosChart"));
+  chart.draw(data, options);
+}
 
 
 

@@ -71,19 +71,19 @@ left:0;
 }
 
 .caloriesRing{
-    /*whole div (will have 2 charts)*/
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     height:50%;
     margin-top:10px; /*Might cause error in fututre??Will Cause error*/
 }
-.macrosRing{
+#macrosChart{
     display: flex;
     align-items: center;
     justify-content: center;
     height:50%;
     margin-top:10px;
+
 }
 .ring{
     stroke:gray;
