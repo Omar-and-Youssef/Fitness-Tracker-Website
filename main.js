@@ -150,7 +150,54 @@ function  updateCaloriesRing(total){
     ring.style.stroke="#E1d90d";
   else  ring.style.stroke="orange";
 }
+google.charts.load("current",{packages: ["corechart"]});
+google.charts.setOnLoadCallback(function(){
+  drawMacrosChart(myMaxValues.maxProtein,myMaxValues.maxFats,myMaxValues.maxCarbs);
+});  
+function drawMacrosChart(protein,fats,carbs) {
 
+  var data = google.visualization.arrayToDataTable([
+      ['Macronutrient', 'Percentage'],
+      ['Fats', fats],
+      ['Carbs', carbs],
+      ['Protein', protein]
+  ]);
+
+  var options = {
+    colors: ["orange", "#6495ED", "#E3735E"],
+      width: 300,
+      height: 300,
+      pieSliceText: 'none',
+      pieSliceText:'label',
+      titlePosition: 'out',
+      titleTextStyle: {
+        color: "white", 
+        fontSize: 20
+      },
+      pieSliceTextStyle:{
+        fontName: 'Arial',
+        fontSize: 12,
+        bold: true,
+        color: 'white',
+        opacity: 1,
+        alignment: 'center'
+      },
+      pieHole: 0.4,
+      backgroundColor: "#343131",
+      pieSliceTextPosition: 'inside',
+      chartArea: {  
+        left: '15%',
+        top: '10%',
+        width:'70%',
+        height:'80%',
+    },
+    legend:"none",
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById("macrosChart"));
+  chart.draw(data, options);
+}
+//================================================================================================
 //Display/Close FoodLog Menu Buttons
 var displaylogButton = document.querySelector(".foodLogButtons.display");
 displaylogButton.addEventListener("click", function() {
@@ -160,10 +207,9 @@ var closeLogButton =document.querySelector(".foodLogButtons.close");
 closeLogButton.addEventListener("click", function() {
   document.querySelector(".foodLog").style.display="none";
 });
-
 //Add Food Button
 var addFoodButton =document.querySelector(".foodLogButtons.add");
-  addFoodButton.addEventListener("click", function(){//add food item button
+addFoodButton.addEventListener("click", function(){//add food item button
 var getInput=document.getElementsByClassName("foodInput");
   //Get Input
   for(var i=0;i<getInput.length;i++)
@@ -201,50 +247,14 @@ if (isValidInput) {
 
 })
 
+var caloriesRing=document.querySelector(".caloriesRing");
+var macrosChart=document.querySelector("#macrosChart");
+caloriesRing.addEventListener("click", function(){
+  caloriesRing.style.display="none";
+  macrosChart.style.display="block";
+})
+macrosChart.addEventListener("click", function(){
+  caloriesRing.style.display="block";
+  macrosChart.style.display="none";
+})
 // =============================================================================
-google.charts.load("current",{packages: ["corechart"]});
-google.charts.setOnLoadCallback(function(){
-  drawMacrosChart(myMaxValues.maxProtein,myMaxValues.maxFats,myMaxValues.maxCarbs);
-});   
-
-function drawMacrosChart(protein,fats,carbs) {
-
-  var data = google.visualization.arrayToDataTable([
-      ['Macronutrient', 'Percentage'],
-      ['Fats', fats],
-      ['Protein', protein],
-      ['Carbs', carbs]
-  ]);
-
-  var options = {
-    colors: ["orange", "#6495ED", "#E3735E"],
-      width: 400,
-      height: 300,
-      pieSliceText: 'label',
-      titlePosition: 'out',
-      titleTextStyle: {
-        color: "white", 
-        fontSize: 20
-      },
-      pieSliceTextStyle:{
-        color:"white",
-        fontWeight: "bold",
-        fontSize: 14, 
-      },
-      pieHole: 0.4,
-      backgroundColor: "#343131",
-      chartArea: {
-        left: '15%',
-        top: '15%',
-        width:'70%',
-        height:'80%',
-    },
-    legend:"none",
-  };
-
-  var chart = new google.visualization.PieChart(document.getElementById("macrosChart"));
-  chart.draw(data, options);
-}
-
-
-
