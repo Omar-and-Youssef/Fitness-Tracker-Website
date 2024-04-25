@@ -28,8 +28,12 @@ function Food(name,calories,protein,fats,carbs){
   this.fats = fats;
   this.carbs=carbs;
 }
-var myFood=new Food(0,0,0,0,0);
 
+function Excercise(name,duration,caloriesBurnt){
+  this.name=name;
+  this.duration=duration;
+  this.caloriesBurnt=caloriesBurnt;
+}
 // =============================================================================
 
 function foodBoxCreator(food){
@@ -98,7 +102,9 @@ function foodBoxCreator(food){
   foodBox.append(foodListContent);//add content to box
   return foodBox;
 }
+function excerBoxCreator(excer){
 
+}
  // =============================================================================
 
 function updateFoodList(food){
@@ -246,6 +252,25 @@ if (isValidInput) {
 }
 
 })
+
+displayExcerlogButton= document.querySelector(".excerLogButtons.display");
+displayExcerlogButton.addEventListener("click",function(){
+  document.querySelector(".excerLog").style.display="block";
+})
+var closeExcerLogButton= document.querySelector(".excerLogButtons.close");
+closeExcerLogButton.addEventListener("click", function() {
+  document.querySelector(".excerLog").style.display="none";
+});
+var addExcerButton =document.querySelector(".excerLogButtons.add");
+addExcerButton.addEventListener("click",function(){
+var excerciseType=document.querySelector(".excerSelect");
+var duration=document.querySelector(".excerduration");
+
+
+});
+
+
+
 
 var caloriesRing=document.querySelector(".caloriesRing");
 var macrosChart=document.querySelector("#macrosChart");

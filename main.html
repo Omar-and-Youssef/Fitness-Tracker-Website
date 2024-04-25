@@ -40,7 +40,7 @@
 
                 <div id="macrosChart"></div>
                 <button class="foodLogButtons display">Log Foods</button>
-       	        <button class="exerLogButtons display">Log Excercise</button> 
+       	        <button class="excerLogButtons display">Log Excercise</button> 
             </div>
         </div>     
 
@@ -80,6 +80,32 @@
                 <button class="foodLogButtons add">Add</button>
             </div>
         </div>
+
+        <div class="excerLog">
+            <div class="excerLogContent">
+                    <div class="headings">
+                        <span class="excerLogButtons close">&times;</span>
+                        <h1>Enter Excercise Details</h1>
+                    </div>
+
+                    <div class="excerLogInput excerSelect">
+                        <label for="excerciseType">Excercise Type: </label>
+                        <select class="excerSelect">
+                            <option value="Walking">Walking</option>
+                            <option value="Running">Running</option>
+                            <option value="Lifting">Lifting</option>
+                            <option value="Cycling">Cycling</option>
+                            <option value="Swimming">Swimming</option> 
+                        </select>
+                    </div>
+
+                    <div class="excerLogInput excerDuration">
+                        <label for="excerDuration">Duration (minutes):</label>
+                        <input class="excerduration" type="number">
+                    </div>
+                <button class="excerLogButtons add">Add</button>
+        </div>
+
     </div>
 <!-------------------------------------------------------------------------------------------------------------->
     <script type=text/javascript src="https://www.gstatic.com/charts/loader.js"></script>
