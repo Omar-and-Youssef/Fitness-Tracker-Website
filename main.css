@@ -38,19 +38,24 @@ left:0;
     /*adds animation when clicking/hovering*/
     background-color:yellow;
     cursor: pointer;
-}
-.title{
+} 
+.nav-bar>.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-family: 'HK Grotesk', sans-serif;
     font-weight: bold;
-    height:100%;
+    height:91.2px;
     background-color: black;
     color:#E1d90d;
     margin: 0px;
-    padding-top: 10%;
-    padding-bottom: 5%;
     padding-right:20px; 
     padding-left:10px; 
     font-size: 40px; 
+}
+.nav-bar a{
+    text-decoration: none;
+    color: #000000;
 }
 /*======================================================================================*/
 .userContent{
@@ -62,6 +67,20 @@ left:0;
     margin:0px;
     padding: 0px;
 }
+/*======================================================================*/
+table{
+    background-color: #DAE3FA;
+    width:98%;
+    font-family: 'HK Grotesk', sans-serif;
+    margin-left: 0%;
+    border-radius: 15px;
+    display: none;
+}
+td{
+    text-align: center;
+}
+/*======================================================================*/
+
 .chartSection{
     display:flex;
     flex-direction: column;
@@ -82,7 +101,6 @@ left:0;
     justify-content: center;
     height:50%;
     margin-top:10px;
-
 }
 .ring{
     stroke:gray;
@@ -152,6 +170,7 @@ button.display{
     margin: 10% 10%;   
     padding: 20px;
     background-color: #FFF9C7;
+    border-radius: 25px;
 }
 .foodLogContent>.headings{
     grid-column: span 2;
@@ -265,7 +284,7 @@ button.display{
     padding: 20px;
     background-color: #DAE3FA;
     font-family: 'HK Grotesk', sans-serif;
-    
+    border-radius: 25px;
 }
 .excerLogContent>.headings{
     grid-column: span 2;
@@ -278,7 +297,7 @@ button.display{
 }
 .excerLogButtons.add{
     /*Add excercise Button inside excercise Log*/
-    column:span 2;
+    
     font-family: 'HK Grotesk', sans-serif;
     font-size: 18px;
     color: black;
@@ -340,6 +359,12 @@ button.display{
     text-decoration: none;
     cursor: pointer;
     background-color: #000000;
+}
+.excerDeleteIcon:hover,
+.excerDeleteIcon:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
 }
 /*======================================================================================*/
 .foodList{
@@ -406,6 +431,12 @@ button.display{
   cursor: pointer;
 }
 
+.excerciseTable{
+    background-color: #FFF9C7;
+    border-radius: 25px;
+    width:98%;
+    height:100px;
+}
 
 
 

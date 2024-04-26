@@ -8,8 +8,6 @@ html {
 body{
     background-color: black;
     color: white;
-	height:100%;
-	width: 100%;
 	display:flex;
 	justify-content:center;
 	align-content:center;
@@ -20,7 +18,7 @@ a{
 }
 h1{
 	margin-top: 0;
-    padding: 10% 10% 0 10%;
+    padding: 4% 10% 0 10%;
     font-family: 'HK Grotesk', sans-serif;
     font-size: 2.3rem;  
 }
@@ -34,15 +32,16 @@ form{
     font-size: 1.3rem; 
 }
 p,#gender{
-	width: 150px;
-	font-size: 1.3rem
+	width: 200px;
+	font-size: 2rem
 }
 label{
-  width: 150px;
+  width: 200px;
   display: inline-block
 }
-#div1,#div2,#div3{
-	width:fit-content;
+#div1,#div2,#div3,#div4{
+	width:70%;
+	font-size:2rem;
 }
 #sub{
     margin: auto;
@@ -59,14 +58,56 @@ label{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    border-radius:10px
+    border-radius:10px;
+	cursor:pointer;
 }
 #container{
-	width:60%;
-	height: 100%;
+	
+	width:70%;
+	height: 80%;
     background-color:#242420;
 	border-radius:25px;
+	margin-top:20px;
+	margin-bottom: 20px;
+	padding-left: 10px;
 }
-div{
-	/* background-color:#242420; */
+input[type="number"],select {
+  width: 40%;
+  height: 35px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #0077be;
+  border-radius: 25px;
+  background-image: linear-gradient(135deg, #FFF9C7, #ffdb5b);
+  color:black;
+}
+
+
+input[type="number"]:focus,select:focus{
+	box-shadow:4px 5px 4px #C8C8C8;
+}
+select option {
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffdb5b;
+    border-radius: 50%;
+    background-color: #fff9c6;
+    margin-right: 10px;
+   
+}
+
+input[type="radio"]:checked {
+    background-color: #9A7B4F;
+}
+input[type="number"]::-webkit-inner-spin-button {  
+	background-color:black;
+	cursor:pointer;
 }

@@ -102,9 +102,6 @@ function foodBoxCreator(food){
   foodBox.append(foodListContent);//add content to box
   return foodBox;
 }
-function excerBoxCreator(excer){
-
-}
  // =============================================================================
 
 function updateFoodList(food){
@@ -127,7 +124,20 @@ function updateTotalVariables(){
     myTotalValues.totalProtein += parseInt(protein[i].innerHTML);
     myTotalValues.totalFats += parseInt(fats[i].innerHTML);
     myTotalValues.totalCarbs += parseInt(carbs[i].innerHTML);
-}
+  }
+    var excerciseRows = document.querySelectorAll(".excerTable tr");
+    var totalCaloriesBurnt = 0;
+  
+    excerciseRows.forEach(function(row) {
+      var caloriesCell = row.querySelectorAll("td:nth-child(3)"); // Select all cells in the 3rd column
+      caloriesCell.forEach(function(cell) {
+        var caloriesBurnt=parseInt(cell.textContent);
+        totalCaloriesBurnt+=isNaN(caloriesBurnt) ? 0 : caloriesBurnt; /////VIP 
+      });
+    });
+  console.log("Total calories burnt:", totalCaloriesBurnt);
+  myTotalValues.totalCalories-=totalCaloriesBurnt;
+
 
   updateCaloriesRing(myTotalValues);
 
@@ -154,6 +164,8 @@ function  updateCaloriesRing(total){
     ring.style.stroke="#0096FF";
   else if(ratio>=0.3) 
     ring.style.stroke="#E1d90d";
+  else if(ratio<0)
+    ring.style.stroke="red";
   else  ring.style.stroke="orange";
 }
 google.charts.load("current",{packages: ["corechart"]});
@@ -173,7 +185,6 @@ function drawMacrosChart(protein,fats,carbs) {
     colors: ["orange", "#6495ED", "#E3735E"],
       width: 300,
       height: 300,
-      pieSliceText: 'none',
       pieSliceText:'none',
       titlePosition: 'out',
       titleTextStyle: {
@@ -217,12 +228,12 @@ closeLogButton.addEventListener("click", function() {
 var addFoodButton =document.querySelector(".foodLogButtons.add");
 addFoodButton.addEventListener("click", function(){//add food item button
 var getInput=document.getElementsByClassName("foodInput");
-  //Get Input
-  for(var i=0;i<getInput.length;i++)
+  //Get Input 
+    for(var i=0;i<getInput.length;i++)
     getInput[i]=getInput[i].value;
     var isValidInput = true;
     for (var i = 0;i<getInput.length;i++) {
-        if (getInput[i].value === "" ||(i!=0&&isNaN(parseFloat(getInput[i].value)))){
+        if (getInput[i].value === "" ||(i!=0&&isNaN(parseFloat(getInput[i].value))||getInput[i].value<0)){
           var fieldName="";
           switch(i){
             case 0:fieldName="Name";break;
@@ -241,7 +252,7 @@ if (isValidInput) {
   document.querySelector(".foodLog").style.display="none";
 
   var myfood=new Food(getInput[0],getInput[1],getInput[2],getInput[3],getInput[4]);
-
+  
   
 
   console.log(myfood.name.value+" "+myfood.calories.value+" "+myfood.carbs.value+" "
@@ -263,14 +274,51 @@ closeExcerLogButton.addEventListener("click", function() {
 });
 var addExcerButton =document.querySelector(".excerLogButtons.add");
 addExcerButton.addEventListener("click",function(){
-var excerciseType=document.querySelector(".excerSelect");
-var duration=document.querySelector(".excerduration");
-
-
-});
-
-
-
+  document.querySelector(".excerTable").style.display="table";
+  var exerciseTable = document.querySelector(".excerTable");
+  console.log(exerciseTable);
+  var excerciseType=document.querySelector(".excerSelect option:checked").textContent;
+  var duration=document.querySelector(".excerDurationInput").value;
+  var caloriesBurnt;
+  switch (excerciseType) {
+    //MET (Metabolic Equivalent of Task) source: healthline
+    case "Walking": 
+      caloriesBurnt=duration*4;
+      break;
+    case "Running":
+      caloriesBurnt=duration*11;
+      break;
+    case "Lifting":
+      caloriesBurnt=duration*6;
+      break;
+    case "Cycling":
+      caloriesBurnt=duration*8;
+      break;
+    case "Swimming":
+      caloriesBurnt=duration*6;
+      break;
+  }
+  
+  var myexcercise=new Excercise()
+  
+  var newRow= exerciseTable.insertRow();
+  var Cell1= newRow.insertCell(0);
+  var Cell2= newRow.insertCell(1);
+  var Cell3= newRow.insertCell(2);
+  var Cell4= newRow.insertCell(3);
+  Cell1.textContent= excerciseType;
+  Cell2.textContent= duration;
+  Cell3.textContent= caloriesBurnt;
+  var trashIcon = document.createElement("i");
+    trashIcon.classList.add("fa","fa-trash-o","excerDeleteIcon");
+    trashIcon.addEventListener("click", function() {
+        newRow.remove();
+        updateTotalVariables();
+    });
+  Cell4.appendChild(trashIcon);
+    document.querySelector(".excerLog").style.display="none";
+updateTotalVariables();
+  });  
 
 var caloriesRing=document.querySelector(".caloriesRing");
 var macrosChart=document.querySelector("#macrosChart");

@@ -1,0 +1,77 @@
+body{
+    height: 100%;
+    background-color: black;
+}
+.layoutManager{
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    }
+.nav-bar{
+    /*navigation-bar container */
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    height: 15%;
+    position:fixed;
+    justify-content:flex-start ;
+    align-items: center;
+    background-color: #E1d90d;
+    font-size: 1.3rem;
+    font-family: 'HK Grotesk', sans-serif;  
+    z-index: 1;
+}
+.nav{ 
+    /*navigation bar divs*/
+    font-family: 'HK Grotesk', sans-serif;
+    margin: 0;
+    padding: 3%;
+}
+.nav.recipes{
+    font-weight: bold;
+    background-color: yellow !important;
+}
+ .nav:hover,
+.nav:focus{
+    /*adds animation when clicking/hovering*/
+    background-color:yellow;
+    cursor: pointer;
+} 
+.nav-bar>.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'HK Grotesk', sans-serif;
+    font-weight: bold;
+    height:91.2px;
+    background-color: black;
+    color:#E1d90d;
+    margin: 0px;
+    padding-right:20px; 
+    padding-left:10px; 
+    font-size: 40px; 
+}
+.nav-bar a{
+    text-decoration: none;
+    color: #000000;
+}
+img{
+    width: 250px;
+    height: 250px;
+}
+#g {
+    border: 20px solid yellow; 
+    background-color: yellow;
+    margin:0px; 
+    margin-bottom: 0px;
+}
+.contenttable{
+    position: relative;
+}
+h2{
+    font-size: 17px;
+    font-family: 'HK Grotesk', sans-serif;  
+}
