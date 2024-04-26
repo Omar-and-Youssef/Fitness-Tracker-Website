@@ -1,3 +1,10 @@
+var theMaintenance = localStorage.getItem("maintenance");
+var theweight=localStorage.getItem("weight");
+////////////////////////THE ABOVE IS THE WEIGHT AND THE MAINETANCE
+document.querySelector(".ringCalUnit").innerHTML=""+theMaintenance;
+
+
+
 var numberOfFoodBoxes=0;
 function TotalValues(totalCalories,totalProtein,totalFats,totalCarbs){
 this.totalCalories=totalCalories;
@@ -331,3 +338,4 @@ macrosChart.addEventListener("click", function(){
   macrosChart.style.display="none";
 })
 // =============================================================================
+

@@ -22,6 +22,7 @@ h1{
     font-family: 'HK Grotesk', sans-serif;
     font-size: 2.3rem;  
 }
+
 .description{
     font-family: 'HK Grotesk', sans-serif;
     font-weight: lighter;
@@ -110,4 +111,11 @@ input[type="radio"]:checked {
 input[type="number"]::-webkit-inner-spin-button {  
 	background-color:black;
 	cursor:pointer;
+}
+#height{
+    display: none;
+}
+#div3{
+    display: none;
+
 }

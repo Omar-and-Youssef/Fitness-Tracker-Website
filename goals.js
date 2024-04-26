@@ -1,3 +1,15 @@
+var theMaintenance = localStorage.getItem("maintenance");//this is the calories
+var theweight=localStorage.getItem("weight");//<< this is the weight
+//  localStorage.setItem("maintenance", maintenanceCalories); << to save in localstorage
+//    localStorage.setItem("weight", weight);
+switch(activityLevel){
+  case "o1":maintenanceCalories-=100;break;
+  case "o2":maintenanceCalories-=250;break;
+  case "o3":maintenanceCalories-=500;break; 
+}
+
+
+
 function MaxValues(maxCalories,maxProtein,maxFats,maxCarbs){
     this.maxCalories=maxCalories;
     this.maxCarbs=maxCarbs;
