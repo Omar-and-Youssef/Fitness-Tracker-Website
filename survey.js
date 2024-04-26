@@ -14,13 +14,15 @@ function calculateCalories(){
   else{ 
     alert("Gender not specified");return; //validation
   }
-  
   var age=document.getElementById("age").value;
   var weight=document.getElementById("weight").value;
   console.log(age);
-  if (age == ""||parseInt(age.value)<1||weight == "" ||parseInt(weight.value)<1){
-      alert("Please enter a valid value for the fields");return;
+  if (age == ""||parseInt(age)<1||weight == "" ||parseInt(weight)<1){
+      alert("Please enter a valid value for the fields");
+      console.log("hiii");
+      return;
   }
+  console.log("entered");
     maintenanceCalories*=(1+age/100);
     var selectElement = document.getElementById("activity");
     var activityLevel = selectElement.options[selectElement.selectedIndex].id;
@@ -32,7 +34,7 @@ function calculateCalories(){
     maintenanceCalories=Math.floor(maintenanceCalories);
     localStorage.setItem("maintenance", maintenanceCalories);
     localStorage.setItem("weight", weight);
-    window.location.href = "register.html";
+    // window.location.href = "register.html";
     //IF AND ONLY IF ALL VALID THEN GO
     //MAKE HIM GO HOME PAGE
  }
