@@ -32,7 +32,5 @@ function calculateCalories(){
     maintenanceCalories=Math.floor(maintenanceCalories);
     localStorage.setItem("maintenance", maintenanceCalories);
     localStorage.setItem("weight", weight);
-    // window.location.href = "register.html";
-    //IF AND ONLY IF ALL VALID THEN GO
-    //MAKE HIM GO HOME PAGE
+    window.location.href = "register.html";
  }
