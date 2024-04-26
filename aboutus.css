@@ -42,16 +42,17 @@ body{
 .nav-bar>.title{
     display: flex;
     flex-direction: column;
+    height: 100%;
     justify-content: center;
     font-family: 'HK Grotesk', sans-serif;
     font-weight: bold;
-    height:100%;
     background-color: black;
     color:#E1d90d;
     margin: 0px;
     padding-right:20px; 
     padding-left:10px; 
     font-size: 40px; 
+
 }
 .nav-bar a{
     text-decoration: none;
