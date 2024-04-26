@@ -1,8 +1,8 @@
 var theMaintenance = localStorage.getItem("maintenance");
 var theweight=localStorage.getItem("weight");
-////////////////////////THE ABOVE IS THE WEIGHT AND THE MAINETANCE
+////////////////////////THE ABOVE IS THE WEIGHT AND THE MAINTENANCE
 document.querySelector(".ringCalUnit").innerHTML=""+theMaintenance;
-
+var maintenanceProtien=theMaintenance*0.3
 
 
 var numberOfFoodBoxes=0;
@@ -25,7 +25,7 @@ function MaxValues(maxCalories,maxProtein,maxFats,maxCarbs){
   this.maxProtein=maxProtein;
   this.maxFats=maxFats;
 }
-var myMaxValues=new MaxValues(1700,140,80,200);
+var myMaxValues=new MaxValues(theMaintenance,140,80,200);
 
 // =============================================================================
 function Food(name,calories,protein,fats,carbs){
@@ -306,7 +306,6 @@ addExcerButton.addEventListener("click",function(){
       break;
   }
   
-  var myexcercise=new Excercise()
   
   var newRow= exerciseTable.insertRow();
   var Cell1= newRow.insertCell(0);

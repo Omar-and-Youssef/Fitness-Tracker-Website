@@ -12,14 +12,17 @@ function calculateCalories(){
     maintenanceCalories=2000;
   }
   else{ 
-    //SHOW HIM ERROR
+    alert("Gender not specified");return; //validation
   }
+
   var age=document.getElementById("age").value;
+  var weight=document.getElementById("weight").value;
+  if (age === "" ||(isNaN(parseFloat(age.value))||age.value<0)||weight === "" ||(isNaN(parseFloat(weight.value))||weight.value<0)){
+      alert("Please enter a valid value for the fields");return;
+  }
   if(age>=18){
     maintenanceCalories*=(1+age/100);
   }
-  var weight=document.getElementById("weight").value;
-
     var selectElement = document.getElementById("activity");
     var activityLevel = selectElement.options[selectElement.selectedIndex].id;
     switch(activityLevel){
@@ -30,6 +33,7 @@ function calculateCalories(){
     maintenanceCalories=Math.floor(maintenanceCalories);
     localStorage.setItem("maintenance", maintenanceCalories);
     localStorage.setItem("weight", weight);
+
     window.location.href = "register.html";
     //IF AND ONLY IF ALL VALID THEN GO
     //MAKE HIM GO HOME PAGE
