@@ -18,8 +18,6 @@ function calculateCalories(){
   var weight=document.getElementById("weight").value;
   console.log(age);
   if (age == ""||parseInt(age)<1||weight == "" ||parseInt(weight)<1){
-      alert("Please enter a valid value for the fields");
-      console.log("hiii");
       return;
   }
   console.log("entered");

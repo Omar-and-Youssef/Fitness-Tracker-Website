@@ -65,27 +65,27 @@
 
                 <div class="foodLogInput">
                     <label for="foodName">Name: </label>
-                    <input class="foodInput" type="text" id="foodName" name="foodName"/>
+                    <input  class="foodInput" type="text" id="foodName" name="foodName"/>
                 </div>
 
                 <div class="foodLogInput inputCals">
                     <label for="inputCals">Calories: </label>
-                    <input class="foodInput" type="number" id="inputCals" name="inputCals"/>
+                    <input class="foodInput" type="number" min="1" id="inputCals" name="inputCals"/>
                 </div>
 
                 <div class="foodLogInput inputProt">
                     <label for="inputProt">Protein: </label>
-                    <input class="foodInput" type="number" id="inputProt" name="inputProt"/>
+                    <input class="foodInput" type="number" min="1" id="inputProt" name="inputProt"/>
                 </div>
 
                 <div class="foodLogInput inputFats">
                     <label for="inputFats">Fats: </label>
-                    <input  class="foodInput" type="number" id="inputFats" name="inputFats"/>
+                    <input  class="foodInput" type="number" min="1" id="inputFats" name="inputFats"/>
                 </div>
 
                 <div class="foodLogInput inputCarbs">
                     <label for="inputCarbs">Carbs: </label>
-                    <input class="foodInput" type="number" id="inputCarbs" name="inputCarbs"/>
+                    <input class="foodInput" type="number" min="1" id="inputCarbs" name="inputCarbs"/>
                 </div>
                 <button class="foodLogButtons add">Add</button>
             </div>
@@ -111,7 +111,7 @@
 
                     <div class="excerLogInput excerDuration">
                         <label for="excerDuration">Duration (minutes):</label>
-                        <input class="excerDurationInput" type="number">
+                        <input class="excerDurationInput" type="number" min="1">
                     </div>
                 <button class="excerLogButtons add">Add</button>
         </div>
