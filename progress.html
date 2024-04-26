@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAWYE</title>
+    <link rel="stylesheet"	href="progress.css"/>
+    <link href="https://fonts.cdnfonts.com/css/hk-groteks" rel="stylesheet">
+    <link rel="stylesheet"
+          href="font-awesome.min.css">
+	<link href="yawye%20goals.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+  
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Week', 'Weight Loss in the last 7 weeks'],
+          ['Week 1',  5],
+          ['Week 2',  3],
+          ['Week 3',  2],
+          ['Week 4',  4],
+          ['Week 5',  6],
+          ['Week 6',  1],
+          ['Week 7',  2],
+        ]);
+        var options = {
+          title: {
+            color: 'white', 
+            titleTextStyle: {
+              color: 'white' 
+            }
+          },
+          curveType: 'function',
+          legend: { 
+            position: 'bottom',
+            textStyle: {
+              color: 'white' 
+            }
+          },
+          backgroundColor: 'black', 
+          colors: ['white'], 
+          hAxis: { 
+            title: 'Week', 
+            titleTextStyle: {
+              color: 'white' 
+            },
+            textStyle: {
+              color: 'white' 
+            }
+          },
+          vAxis: { 
+            title: 'Weight', 
+            titleTextStyle: {
+              color: 'white'
+            },
+            textStyle: {
+              color: 'white' 
+            },
+            viewWindow: { 
+              min: 0, 
+              max: 10 
+            }
+          },
+          chartArea: {
+            left: 50,
+            top: 50,
+            width: '80%',
+            height: '80%',
+            borderColor: 'white'
+          }
+        };
+  
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+  
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+<body>
+    <div class="layoutManager">
+      <div class="nav-bar"> 
+        <div class="title">Y A W Y E</div>
+        <a class="nav home" href="main.html">Home</a>
+        <a class="nav goals" href="goals.html">Goals</a>
+        <a class="nav progress" href="progress.html">Progress</a>
+        <a class="nav recipes" href="recipes.html">Recipes</a>
+        <a class="nav aboutUs" href="aboutus.html">About Us</a>
+    </div>
+</div>
+<br>
+<P> Your Fitness Pogress </P> <br> <br>
+    <table align="left" bgcolor="#000000" cellspacing="0" style="width: 45%">
+        <tr>
+            <td class="style2" style="height: 40px; width: 50px" colspan="2">
+            <div class="text"> &nbsp;Your Fitness Pogress</div> <hr>
+            </td>
+        </tr>  
+	<tr>
+		<td class="style2" style="height: 40px; width: 50px; background-color: darkgray; border-right: 3px solid white;">
+		<h3>&nbsp;Current Weight</h3>
+		</td>
+		<td class="style2" style="height: 40px; width: 50px; background-color: darkgray">
+            <h3 align="center" id="currentWeight">80 kg</h3>
+		</td>
+	</tr>
+	<tr>
+		<td class="style2" style="height: 40px; width: 50px; border-right: 3px solid white;">
+		<h3>&nbsp;Goal Weight</h3>
+		</td>
+		<td class="style2" style="height: 40px; width: 50px">
+            <h3 align="center" id="goalWeight">60 kg</h3>
+		</td>
+	</tr>
+	<tr>
+		<td class="style2" style="height: 40px; width: 50px; background-color: darkgray; border-right: 3px solid white;">
+		<h3>&nbsp;Weekly Weight Loss/gain Goal</h3>
+		</td>
+		<td class="style2" style="height: 40px; width: 50px; background-color: darkgray">
+            <h3 align="center">1.5 kg</h3>
+		</td>
+	</tr>
+	<tr>
+		<td class="style2" style="height: 40px; width: 50px; border-right: 3px solid white;">
+		<h3>&nbsp;Activity Level </h3>
+		</td>
+		<td class="style2" style="height: 40px; width: 50px">
+            <h3 align="center">Active</h3>
+		</td>
+	</tr>
+</table>
+<div id="curve_chart" class="chart" align="right"></div>
+<script src="./progress.js" charset="UTF-8"></script>
+</body>
+</html>

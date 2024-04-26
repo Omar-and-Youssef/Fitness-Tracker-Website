@@ -3,13 +3,16 @@ body{
     color: white;
 }
 
-h1{
-        color: #E1d90d;  
+.title{
         margin-top: 0;
         padding: 10%;
         font-family: 'HK Grotesk', sans-serif;
-        font-size: 2.3rem;  
-        
+        font-size: 2.3rem;    
+}
+
+a{
+    color: #E1d90d;
+    text-decoration: none;
 }
 
 .slogan{
@@ -21,24 +24,22 @@ h1{
 }
 
 .container{
-    margin: auto;
+    margin-top:10%;
     display: grid;
     grid-template-rows: 1fr 3fr 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 img.Home1{
-    padding: 0px;
-    width: 100%;
+    position:fixed;
+    top: 0; 
+    width: 450px;
     height: auto;
     grid-row-end: span 2;
-    top: 0; 
-    left: 0; 
+   
 }
 button,.login.register{
     margin: auto;
-    margin-top: 0;
-    margin-left: 50%;
     height: 3rem;
     width: 50%;
     font-family: 'HK Grotesk', sans-serif;
@@ -51,5 +52,19 @@ button,.login.register{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    border-radius:10px
+    border-radius:10px;
+}
+.login:hover,
+.login:focus {
+  color: yellow;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: black;
+}
+.register:hover,
+.register:focus {
+  color: yellow;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: black;
 }

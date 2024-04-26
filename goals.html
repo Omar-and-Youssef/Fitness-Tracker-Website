@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAWYE</title>
+    <link rel="stylesheet" href="goals.css" />
+    <link href="hk-groteks" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link href="https://fonts.cdnfonts.com/css/hk-groteks" rel="stylesheet">
+    <link href="yawye%20goals.css" rel="stylesheet" type="text/css">    
+</head>
+<body>
+    <div class="layoutManager">
+        <div class="nav-bar"> 
+            <div class="title">Y A W Y E</div>
+            <a class="nav home" href="main.html">Home</a>
+            <a class="nav goals" href="goals.html">Goals</a>
+            <a class="nav progress" href="progress.html">Progress</a>
+            <a class="nav recipes" href="recipes.html">Recipes</a>
+            <a class="nav aboutUs" href="aboutus.html">About Us</a>
+        </div>
+    </div>
+    <P> Your Fitness Goals </P> <br>
+    <P> Daily Nutrition Goals </P>
+    <form action="" method="get">
+        <div style="display:flow-root; gap: 0px;">
+            <table align="left" bgcolor="#000000" cellspacing="0" style="width: 45%">
+                <tr>
+                    <td class="style2" style="height: 40px; width: 50px" colspan="2">
+                        <div class="text">Your Fitness Goals</div> <br>
+                        <fieldset>
+                            <legend>
+                                <font color="white" font size="5px">Diet plan</font>
+                            </legend>
+                            <div class="dropdown-wrapper">
+                                <select id="diet-plan-dropdown">
+                                    <option value="Cutting">Cutting</option>
+                                    <option value="Bulking">Bulking</option>
+                                    <option value="Body Recomposition" selected="selected">Body Recomposition</option>
+                                    <option value="Maintenance">Maintenance</option>
+                                    <option value="Deficit">Deficit</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                        <br>
+                        <br>
+                        <div class="tabletitle">Daily Nutrition Goals</div>
+                        <hr>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="style2"
+                        style="height: 20px; width: 10px; background-color: darkgray; border-right: 3px solid white;">
+                        <h3>&nbsp;Calories</h3>
+                    </td>
+                    <td class="style2" style="height: 20px; width: 30px; background-color: darkgray">
+                        <h3 align="center">1800 Cal</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="style2" style="height: 20px; width: 30px; border-right: 3px solid white;">
+                        <h3>&nbsp;Carbohydrates (90g)</h3>
+                    </td>
+                    <td class="style2" style="height: 20px; width: 30px">
+                        <h3 align="center">30%</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="style2"
+                        style="height: 20px; width: 30px; background-color: darkgray; border-right: 3px solid white;">
+                        <h3>&nbsp;Fat (20g)</h3>
+                    </td>
+                    <td class="style2" style="height: 20px; width: 30px; background-color: darkgray">
+                        <h3 align="center">20%</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="style2" style="height: 20px; width: 30px; border-right: 3px solid white;">
+                        <h3>&nbsp;Protein (200g)</h3>
+                    </td>
+                    <td class="style2" style="height: 20px; width: 30px">
+                        <h3 align="center">50%</h3>
+                    </td>
+                </tr>
+            </table>
+            <div id="donutchart" class="donutchart" align="right"></div>
+            <!-- <table class="secondtable" bgcolor="#000000" cellspacing="0" style="width: 45%; margin-top: 235px;">
+                <tr>
+                    <td class="style2" style="height: 10px; width: 30px" colspan="2">
+                        <div class="tabletitle">Fitness</div>
+                        <hr>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="style2"
+                        style="height: 20px; width: 30px; background-color: darkgray; border-right: 3px solid white;">
+                        <h3>&nbsp;Calories Burned / Week</h3>
+                    </td>
+                    <td class="style2" style="height: 20px; width: 30px; background-color: darkgray">
+                        <h3 align="center">1,000 Cal</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="style2" style="height: 20px; width: 30px; border-right: 3px solid white;">
+                        <h3>&nbsp;Workouts / Week</h3>
+                    </td>
+                    <td class="style2" style="height: 20px; width: 30px">
+                        <h3 align="center">0 Workouts</h3>
+                    </td> -->
+                </tr>
+                <tr>
+                    <td class="style2"
+                        style="height: 20px; width: 30px; background-color: darkgray; border-right: 3px solid white;">
+                        <h3>&nbsp;Minutes/Workout</h3>
+                    </td>
+                    <td class="style2" style="height: 20px; width: 30px; background-color: darkgray">
+                        <h3 align="center">0 Min</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="style2" style="height: 20px; width: 30px; border-right: 3px solid white;">
+                        <h3>&nbsp;Excercise Calories</h3>
+                    </td>
+                    <td class="style2" style="height: 20px; width: 30px">
+                        <h3 align="center">On</h3>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script type=text/javascript src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="./goals.js" charset="UTF-8"></script>
+</body>
+</html>

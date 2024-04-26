@@ -1,0 +1,101 @@
+body{
+    height: 100%;
+    background-color: black;
+}
+.layoutManager{
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    }
+.nav-bar{
+    /*navigation-bar container */
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    height: 15%;
+    justify-content:flex-start ;
+    align-items: center;
+    background-color: #E1d90d;
+    font-size: 1.3rem;
+    font-family: 'HK Grotesk', sans-serif;  
+    margin-top: 0;
+}
+.nav{ 
+    /*navigation bar divs*/
+    font-family: 'HK Grotesk', sans-serif;
+    margin: 0;
+    padding: 3%;
+}
+.nav.aboutus{
+    font-weight: bold;
+    background-color: yellow !important;
+}
+ .nav:hover,
+.nav:focus{
+    /*adds animation when clicking/hovering*/
+    background-color:yellow;
+    cursor: pointer;
+} 
+.nav-bar>.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'HK Grotesk', sans-serif;
+    font-weight: bold;
+    height:91.2px;
+    background-color: black;
+    color:#E1d90d;
+    margin: 0px;
+    padding-right:20px; 
+    padding-left:10px; 
+    font-size: 40px; 
+}
+.nav-bar a{
+    text-decoration: none;
+    color: #000000;
+}
+.title{ 
+    height:100%;
+    background-color: black;
+}
+.title>h1{
+    color:#E1d90d ;
+    margin: 0px;
+    height:50%;
+    padding: 0px;
+    padding-top: 10%;
+    padding-bottom: 5%;
+    padding-right:20px; 
+    padding-left:10px; 
+    font-size: 40px; 
+}
+a {
+    text-decoration: none;
+  }
+  ol{
+    color:white;
+    font-size:medium;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  h2{
+    color :white;
+    font-size:larger;
+  }
+  #g {
+    border: 20px solid yellow; 
+    background-color: yellow;
+    margin:0px; 
+    margin-bottom: 0px;
+}
+.ab{
+    color : white;
+    font-size:larger;
+    font-family: 'HK Grotesk', sans-serif;  
+}
+h2{
+    margin-left: 25px;
+    font-family :Georgia, 'Times New Roman', Times, serif;
+}

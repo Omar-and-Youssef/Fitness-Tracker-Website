@@ -1,0 +1,129 @@
+body{
+    height: 100%;
+    background-color: black;
+}
+.layoutManager{
+display: block;
+height: 100%;
+width: 100%;
+position: fixed;
+top:0;
+left:0;
+}
+.nav-bar{
+    /*navigation-bar container */
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    height: 15%;
+    justify-content:flex-start ;
+    align-items: center;
+    background-color: #E1d90d;
+    font-size: 1.3rem;
+    font-family: 'HK Grotesk', sans-serif; 
+    z-index: 2; 
+}
+.nav{ 
+    /*navigation bar divs*/
+    font-family: 'HK Grotesk', sans-serif;
+    margin: 0;
+    padding: 3%;
+}
+.nav.goals{
+    font-weight: bold;
+    background-color: yellow !important;
+}
+ .nav:hover,
+.nav:focus{
+    /*adds animation when clicking/hovering*/
+    background-color:yellow;
+    cursor: pointer;
+} 
+.nav-bar>.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'HK Grotesk', sans-serif;
+    font-weight: bold;
+    height:91.2px;
+    background-color: black;
+    color:#E1d90d;
+    margin: 0px;
+    padding-right:20px; 
+    padding-left:10px; 
+    font-size: 40px; 
+}
+.nav-bar a{
+    text-decoration: none;
+    color: #000000;
+}
+.style1 {
+	border-style: solid;
+	border-color: #000000;
+	color: #FFFF00;
+	font-size: 25px;
+	border-bottom-color:white;
+	text-align: justify;
+}
+body{
+    overflow-y: hidden;
+}
+.style2 {
+	color: #FFFFFF;
+	text-align: justify;
+	font-size: 15px;
+}
+.style3 {
+	color: #FFFF00;
+	font-size: 40px;
+}
+table, tr, th, td {
+	margin: 10px;
+    border-collapse: collapse;
+    font-family: 'HK Grotesk', sans-serif;
+}
+#g {
+    border: 20px solid yellow; 
+    background-color: yellow;
+    margin:0px; 
+    margin-bottom: 0px;
+}
+.text {
+    text-align: left;
+    margin: 0px;
+    font-size: 40px;
+    color: #FFFFFF;
+    font-family: 'HK Grotesk', sans-serif;
+}
+.tabletitle {
+    text-align: left;
+    margin: 0px;
+    font-size: 30px;
+    color: #FFFFFF;
+    font-family: 'HK Grotesk', sans-serif;
+} 
+.dropdown-wrapper {
+    position:relative;
+    width: 200px;
+    font-family: 'HK Grotesk', sans-serif;
+}
+#diet-plan-dropdown {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: darkgray;
+    color: white;
+    font-family: 'HK Grotesk', sans-serif;
+}
+/* .secondtable {
+    width: 100px;
+    height: 200px;  
+} */
+.donutchart {
+    width: 400px;
+    height: 400px;
+    float:right;
+    margin-top: 7%;
+}
