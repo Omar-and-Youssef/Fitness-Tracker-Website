@@ -7,7 +7,7 @@ function checkInput(){
     var theweight=localStorage.getItem("weight");
     console.log(theweight);
     console.log(theMaintenance);
-    if(theMaintenance==-1||theweight==-1){
+    if(theMaintenance==null||theweight==null){
         alert("Please regiser");
     }
     else{

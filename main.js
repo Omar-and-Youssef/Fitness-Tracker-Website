@@ -2,7 +2,10 @@ var theMaintenance = localStorage.getItem("maintenance");
 var theweight=localStorage.getItem("weight");
 ////////////////////////THE ABOVE IS THE WEIGHT AND THE MAINTENANCE
 document.querySelector(".ringCalUnit").innerHTML=""+theMaintenance;
-var maintenanceProtien=theMaintenance*0.3
+var maintenanceProtien=theMaintenance*0.3;
+var maintenanceProtein=parseInt((theMaintenance*0.3)/4);
+var maintenanceCarbs=parseInt((theMaintenance*0.5)/4);
+var maintenanceFats=parseInt((theMaintenance*0.2)/8); //this calcs macros ingrams 
 
 
 var numberOfFoodBoxes=0;
@@ -25,7 +28,7 @@ function MaxValues(maxCalories,maxProtein,maxFats,maxCarbs){
   this.maxProtein=maxProtein;
   this.maxFats=maxFats;
 }
-var myMaxValues=new MaxValues(theMaintenance,140,80,200);
+var myMaxValues=new MaxValues(theMaintenance,maintenanceProtein,maintenanceFats,maintenanceCarbs);
 
 // =============================================================================
 function Food(name,calories,protein,fats,carbs){
@@ -151,7 +154,7 @@ function updateTotalVariables(){
   if(myTotalValues.totalProtein==0 || myTotalValues.totalFats==0 || myTotalValues.totalCarbs==0)
   drawMacrosChart(myMaxValues.maxProtein,myMaxValues.maxFats,myMaxValues.maxCarbs);
   else drawMacrosChart(myTotalValues.totalProtein,myTotalValues.totalFats,myTotalValues.totalCarbs);
-}
+} 
 // =============================================================================
 function  updateCaloriesRing(total){
   ringtotalCalories.innerHTML=total.totalCalories;
@@ -286,6 +289,9 @@ addExcerButton.addEventListener("click",function(){
   console.log(exerciseTable);
   var excerciseType=document.querySelector(".excerSelect option:checked").textContent;
   var duration=document.querySelector(".excerDurationInput").value;
+  if (duration=== "" || duration<1){
+    alert("Please enter a valid duration value");return;
+  }
   var caloriesBurnt;
   switch (excerciseType) {
     //MET (Metabolic Equivalent of Task) source: healthline
@@ -337,4 +343,3 @@ macrosChart.addEventListener("click", function(){
   macrosChart.style.display="none";
 })
 // =============================================================================
-

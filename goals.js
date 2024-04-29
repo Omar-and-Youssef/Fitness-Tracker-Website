@@ -2,7 +2,14 @@ var theMaintenance = localStorage.getItem("maintenance");//this is the calories
 var theweight=localStorage.getItem("weight");//<< this is the weight
 //  localStorage.setItem("maintenance", maintenanceCalories); << to save in localstorage
 //    localStorage.setItem("weight", weight);
+var maintenanceProtein=parseInt((theMaintenance*0.3)/4);
+var maintenanceCarbs=parseInt((theMaintenance*0.5)/4);
+var maintenanceFats=parseInt((theMaintenance*0.2)/8); //this calcs macros ingrams 
 
+document.getElementById("calorieGoal").innerHTML=theMaintenance+" kcal";
+document.getElementById("carbsPercentage").innerHTML=maintenanceCarbs+" g";
+document.getElementById("fatsPercentage").innerHTML=maintenanceFats+" g";
+document.getElementById("proteinPercentage").innerHTML=maintenanceProtein+" g";
 
 
 function MaxValues(maxCalories,maxProtein,maxFats,maxCarbs){
@@ -10,7 +17,7 @@ function MaxValues(maxCalories,maxProtein,maxFats,maxCarbs){
     this.maxCarbs=maxCarbs;
     this.maxProtein=maxProtein;
     this.maxFats=maxFats;
-  }var myMaxValues=new MaxValues(1700,140,80,200);
+  }var myMaxValues=new MaxValues(theMaintenance,maintenanceProtein,maintenanceFats,maintenanceCarbs);
 
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);

@@ -78,9 +78,9 @@ body{
 	font-size: 40px;
 }
 table, tr, th, td {
-	margin: 10px;
     border-collapse: collapse;
     font-family: 'HK Grotesk', sans-serif;
+    margin-left: 4.5%;
 }
 #g {
     border: 20px solid yellow; 
@@ -97,10 +97,9 @@ table, tr, th, td {
 }
 .tabletitle {
     text-align: left;
-    margin: 0px;
-    font-size: 30px;
+    font-size: 40px;
     color: #FFFFFF;
-    font-family: 'HK Grotesk', sans-serif;
+    font-family: 'HK Grotesk', sans-serif; 
 } 
 .dropdown-wrapper {
     position:relative;
@@ -125,5 +124,5 @@ table, tr, th, td {
     width: 400px;
     height: 400px;
     float:right;
-    margin-top: 7%;
+    margin-top: 5%;
 }
